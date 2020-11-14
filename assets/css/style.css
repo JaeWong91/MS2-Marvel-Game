@@ -26,6 +26,10 @@ header {
     
 }
 
+ul {
+    list-style-type: none;
+}
+
 .marvel-background:after {
     content: '';
     background: url('../images/marvel-background.jpg') no-repeat center center;
@@ -50,7 +54,7 @@ body {
 .modal-content {
     position: absolute;
     width: 280px;
-    height: 300px;
+    height: 340px;
     background-color: rgb(7, 19, 34);
     color: white;
     border: solid 1px;
@@ -61,10 +65,9 @@ body {
 }
 
 .close {
-    color: rgb(255, 253, 253);
-    float: right;
-    font-size: 40px;
-    font-weight: 2;
+    color: white;
+    float: left;
+    opacity: 1;
 }
 
 .close:hover,
