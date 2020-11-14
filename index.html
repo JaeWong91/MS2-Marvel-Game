@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Marvel</title>
+</head>
+<body>
+	<section class="marvel-background">
+		<header>
+			<img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
+        </header>
+		<div class="text-center mx-auto align-middle py-5 center-container absolute-center" id="main-menu">
+			<h3>Select a Game</h3>
+            <br>
+			<button type="button" id="myBtn" class="btn btn-dark" data-toggle="modal" data-target="">Card Pair Matching</button> <!--the "popup-button" class is a test-->
+            <br>
+			<button type="button" class="btn btn-dark mt-2">Battle</button>
+		</div>
+
+<!-- THE MODAL-->
+
+<div id="myModal" class="modal">
+
+	<!-- THE MODAL CONTENT This is a practice for a modal popup window-->
+	<div class="modal-content center-container absolute-center text-center mx-auto py-">
+        <span class="close">&times;</span>
+		<h3>Select difficulty</h3>
+		<ul>
+			<li>Easy</li>
+			<li>Medium</li>
+			<li>Hard</li>
+		</ul>
+        <button type="button" class="btn btn-danger">START</button>
+	</div>
+
+</div>
+
+
+
+
+
+<!-- Modal -->
+<!--  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>   -->
+
+
+	</section>
+
+    <script src="../assets/js/script.js"></script>
+
+</body>
+
+</html>
