@@ -11,14 +11,23 @@ header {
 #marvel-logo {
     width: 300px;
     border: solid 1px;
-    border-color: white;
+    border-color: #ffffff;
     
+}
+
+.card-game-title {
+    background-color: #236bc4;
+    color: #ffffff;
+    font-size: 40px;
+    font-stretch: ultra-expanded;
+    border: solid 1px #ffffff;
+
 }
 
 #main-menu {
     width: 280px;
     height: 280px;
-    background-color: rgb(35, 107, 196);
+    background-color: #236bc4;
     color: white;
     border: solid 1px;
     border-color: white;
@@ -96,4 +105,12 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+  .quit-button {
+      position: absolute;
+      font-size: 25px;
+      background-color: orange;
+      color: black;
+      border: solid 1px white;
   }
