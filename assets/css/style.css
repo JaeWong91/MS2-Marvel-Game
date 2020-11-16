@@ -109,8 +109,13 @@ body {
 
   .quit-button {
       position: absolute;
-      font-size: 25px;
+      font-size: 22px;
       background-color: orange;
       color: black;
       border: solid 1px white;
+      line-height: 1.1;
+  }
+
+  .quit-button:hover {
+      color: white;
   }
