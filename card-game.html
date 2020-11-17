@@ -16,9 +16,55 @@
 		<header>
 			<img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
         </header>
+        
         <a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>
-        <div class="row">
-            <span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
+        <span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
+
+        <div class="card-game-container container">
+            <div class="card-game-info-container row">
+                <div class="col-6 pl-5 card-game-info">
+                    Time <span id="time-remaining">90</span>
+                </div>
+                <div class="col-6 pr-5 attempts card-game-info">
+                    Attempts <span id="attempts">0</span>
+                </div>    
+            </div>
+
+            <!--Cards -->
+            <div class="container">
+			<div class="row mx-auto justify-content-center">
+				<div class="card visible col-2 mx-2 my-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="spiderman" src="assets/images/spiderman2.png" alt="spiderman">
+                    </div>
+                </div>
+
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+                <div class="card col-2 mx-2 my-2"></div>
+			</div>
+            <div class="row mx-auto justify-content-center">
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+                <div class="card col-2 mx-2 my-2"></div>
+			</div>
+            <div class="row mx-auto justify-content-center">
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+                <div class="card col-2 mx-2 my-2"></div>
+			</div>
+            <div class="row mx-auto justify-content-center">
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+				<div class="card col-2 mx-2 my-2"></div>
+                <div class="card col-2 mx-2 my-2"></div>
+			</div>
+            </div>
         </div>
 	</section>
     <script src="../assets/js/script.js"></script>
