@@ -118,6 +118,7 @@ header {
 .center-container {
   /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   position: relative;
+  perspective: 500px;  /* 3d perspective, will tell us that the element is 500px away from the game container */
 }
 
 .absolute-center {
@@ -171,6 +172,7 @@ header {
     min-width: 68px;
     padding-right: 0;
     padding-left: 0;
+    background-color: transparent;
 }
 
 .card-face {
@@ -183,14 +185,19 @@ header {
     overflow: hidden;
     border: solid 1px white;
     backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
 }
 
 .card-front {
+    background-color: white;
+    border: solid 1px black;
     transform: rotateY(180deg);
 }
 
 .card-back {
+    background-color: transparent;
     transform: rotateY(0);
+    
 }
 
 .card.visible .card-back {
@@ -201,9 +208,65 @@ header {
     transform: rotateY(0); 
 }
 
-.spiderman {
+.card.matched .card-value {
+    animation: dance 2s linear infinite 500ms; /* when there is a match of cards, both cards will "dance" for 2 seconds and infinitely, with a delay of 500ms as this is the time it takes for the card to rotate*/
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+}
+
+.overlay-picture {
+    width: 50vw;
+    max-width: 500px;
+}
+
+.overlay-text-small {
+    font-size: .7em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes  overlay-grow {
+    from {
+        background-color: black;
+        font-size: 0;
+    }
+    to {
+        background-color: rgb(0, 0, 0, 0.95);
+        font-size: 80px;
+    }
+}
+
+@keyframes dance {              /*Dancing movement*/
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+}
+
+.card-value {
     height: 80px;
     width: auto;
+    transform: scale(1.1);
 }
 
 .question-mark {            /* This is the back of the card */
@@ -214,5 +277,15 @@ header {
 
 .card:hover {
     transform: rotate(-10deg);
+    transition: transform 1s;
+}
+
+.card-front:hover .card-value {
+    transform: scale(1);
+    transition: transform 1s;
+}
+
+.card-back:hover .question-mark {
+    transform: scale(1.1);
     transition: transform 1s;
 }
