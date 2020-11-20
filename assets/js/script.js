@@ -33,7 +33,7 @@ let audio = {
 window.onload = function() {
     document.getElementById('marvel-intro').play();
     audio.themeMusic.loop = true;
-    audio.themeMusic.volume = 0.3;  
+    audio.themeMusic.volume = 0.1;  
 };
 
 
