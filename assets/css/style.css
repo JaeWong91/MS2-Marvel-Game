@@ -212,7 +212,7 @@ header {
     animation: dance 2s linear infinite 500ms; /* when there is a match of cards, both cards will "dance" for 2 seconds and infinitely, with a delay of 500ms as this is the time it takes for the card to rotate*/
 }
 
-.overlay-text {
+.overlay-text, .enter-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -234,7 +234,7 @@ header {
     font-size: .7em;
 }
 
-.overlay-text.visible {
+.overlay-text.visible, .enter-overlay.visible {
     display: flex;
     flex-direction: column;
     animation: overlay-grow 500ms forwards;
