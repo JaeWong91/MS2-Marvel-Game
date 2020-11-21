@@ -38,6 +38,10 @@ class AudioController {
         this.flipSound.volume = 0.5;
     }
     startMusic() {
+        this.victorySound.pause();      //ADDED THIS MYSELF
+        this.victorySound.currentTime = 0;      //ADDED THIS MYSELF
+        this.gameOverSound.pause();     //ADDED THIS MYSELF
+        this.gameOverSound.currentTime = 0;    //ADDED THIS MYSELF
         this.bgMusic.play();
     }
     stopMusic() {
@@ -81,7 +85,7 @@ class MarvelCards {                  // creating a new class
             this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
-        },500);
+        },100);
         this.hideCards();
         this.timer.innerText = this.timeRemaining;
         this.ticker.innerText = this.totalClicks;
@@ -169,6 +173,9 @@ class MarvelCards {                  // creating a new class
         }
     }
 
+
+
+
     canFlipCard(card) {                                                                         // here if the below statement is true, then the player can flip the card
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck // This creates a boolean - here is if statement so if (! means is not) all 3 statements are all FALSE then the statement will be true.
     }
@@ -179,17 +186,16 @@ class MarvelCards {                  // creating a new class
 
 
 
-function ready() {
-    
+function ready() {    
     let difficultyMenu = document.getElementById('difficulty-menu');        //added this as test
     let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
-    let cardGame = document.getElementsById('card-game');                             //added this as test
+    let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new MarvelCards(90, cards);
 
 
-    btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
+     btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
         btn.addEventListener('click', () => {
             difficultyMenu.classList.add('hide');
             cardGame.classList.remove('hide');
@@ -200,6 +206,7 @@ function ready() {
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
             overlay.classList.remove('visible');
+
             game.startGame();                       //here when you click on the overlay, it will start the game
         });
     });
@@ -214,8 +221,9 @@ function ready() {
 
 
 //REMOVING THIS TO TRY AND GET THE MODAL TO WORK
-//if(document.readyState === 'loading') {
-//    document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
-//} else {
-//    ready();
-//}
+
+if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
+} else {
+    ready();
+}

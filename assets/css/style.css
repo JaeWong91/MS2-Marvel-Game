@@ -67,7 +67,6 @@ header {
     opacity: 0.96;
     animation-name: animatetop;
     animation-duration: 1s;
-    display: block;
 }
 
 .btn {
@@ -271,15 +270,15 @@ header {
     }
 }
 
-@keyframes dance {              /*Dancing movement*/
+@keyframes dance {              /* zoom in and out animation for when cards are matched*/
     0%, 100% {
-        transform: rotate(0);
+        transform: scale(0.9);
     }
     25% {
-        transform: rotate(-30deg);
+        transform: scale(1);
     }
     75% {
-        transform: rotate(30deg);
+        transform: scale(1.1);
     }
 }
 
