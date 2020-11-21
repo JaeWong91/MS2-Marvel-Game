@@ -9,6 +9,7 @@ Image stock sites
 
 1) https://www.hiclipart.com/
 2) https://flyclipart.com/
+3) https://www.clipartmax.com/
 
 
 Audio sites

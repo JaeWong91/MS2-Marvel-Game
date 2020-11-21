@@ -56,11 +56,25 @@ header {
     animation-duration: 1s;
 }
 
+/* Difficulty select window */
+#difficulty-menu {
+    width: 280px;
+    height: 280px;
+    background-color: rgb(7, 19, 34);
+    color: white;
+    border: solid 1px;
+    border-color: white;
+    opacity: 0.96;
+    animation-name: animatetop;
+    animation-duration: 1s;
+    display: block;
+}
+
 .btn {
   font-size: 22px;
 }
 
-/* Difficulty select window */
+/* Difficulty select window - changed the model to be a normal menu instead, can delete this! */
 .modal-content {
   position: absolute;
   width: 280px;
@@ -69,9 +83,13 @@ header {
   color: white;
   border: solid 1px;
   border-color: white;
-  z-index: 1;
+  z-index: 100000;
   animation-name: animatetop;
   animation-duration: 1s;
+}
+
+.hide {
+    display: none;
 }
 
 /* The close button on the modal */
@@ -114,6 +132,8 @@ header {
     opacity: 1;
   }
 }
+
+
 
 .center-container {
   /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/

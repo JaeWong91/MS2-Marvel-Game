@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    
+
 
     <title>Marvel</title>
 </head>
@@ -14,25 +16,56 @@
 <body>
 	<section class="marvel-background">
 		<header>
-			<img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
+			<span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
         </header>
-        <div class="overlay-text visible">
+
+        <!-- THE MODAL ITS NOT WORKING!!!!-->
+
+		<!--  <div id="myModal" class="modal">   -->
+		
+			<!-- THE MODAL CONTENT -->
+			<!-- <div class="modal-content center-container absolute-center text-center mx-auto py-">
+				<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+				<h3 class="my-2">Select difficulty</h3>
+				<button type="button" class="btn btn-success w-50 center mx-auto my-2" href="card-game.html">Easy</button>
+				<button type="button" class="btn btn-warning w-50 center mx-auto my-2">Medium</button>
+				<button type="button" class="btn btn-danger w-50 center mx-auto my-2">Hard</button>
+			</div>
+		</div> -->
+
+
+
+    <!-- TEST MODAL!!!-->
+    <!-- <div id="modal" > -->
+        <div class="center-container absolute-center text-center mx-auto my-auto" id="difficulty-menu">
+				<h3 class="my-2">Select difficulty</h3>
+				<button type="button" class="btn btn-success w-50 center mx-auto my-2">Easy</button>
+				<button type="button" class="btn btn-warning w-50 center mx-auto my-2">Medium</button>
+				<button type="button" class="btn btn-danger w-50 center mx-auto my-2">Hard</button>
+		</div>
+    <!-- </div> -->
+
+    <!-- ^^^ Test Modal ^^^ -->
+
+
+   <!--     <div class="overlay-text visible">    removing this for now to try and get the modal difficulty selector to function first 
             Click to Start
-        </div>
+        </div>   -->
+
         <div id="game-over-text" class="overlay-text">
             GAME OVER
             <img class="deadpool-fail overlay-picture" src="assets/images/deadpool-fail.png" alt="sad deadpool">
-            <span class="overlay-text-small"> Click to restart</span>
+            <span class="overlay-text-small">Click to restart</span>
         </div>
         <div id="victory-text" class="overlay-text ">
             YOU DID IT!
             <img class="spiderman-victory overlay-picture" src="assets/images/spiderman-victory.png" alt="spiderman a-ok">
-            <span class="overlay-text-small"> Click to restart</span>
+            <span class="overlay-text-small">Click to restart</span>
         </div>
         <a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>
-        <span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
+        
 
-        <div class="card-game-container container">
+        <div class="card-game-container container hide" id="card-game">   <!-- "d-none to try and hide the card game before a difficulty is selected-->
 			<div class="card-game-info-container row">
 				<div class="col-6 pl-5 card-game-info">
 					Time <span id="time-remaining">90</span>
@@ -44,7 +77,7 @@
 
             <!--Cards -->
             <div class="container">
-			    <div class="row mx-auto justify-content-center">
+			    <div class="row mx-auto justify-content-center ">    <!-- First Row of 4 cards-->
 				    <div class="card col-2 mx-2 my-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
@@ -78,7 +111,7 @@
                         </div>
                     </div>
 			    </div>
-                <div class="row mx-auto justify-content-center">
+                <div class="row mx-auto justify-content-center ">    <!-- Second Row of 4 cards-->
 				    <div class="card col-2 mx-2 my-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
@@ -112,7 +145,7 @@
                         </div>
                     </div>
 			    </div>
-                <div class="row mx-auto justify-content-center">
+                <div class="row mx-auto justify-content-center">    <!-- Third Row of 4 cards-->
 				    <div class="card col-2 mx-2 my-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
@@ -146,7 +179,7 @@
                         </div>
                     </div>
 			    </div>
-                <div class="row mx-auto justify-content-center">
+                <div class="row mx-auto justify-content-center">    <!-- Fourth Row of 4 cards-->
 				    <div class="card col-2 mx-2 my-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">

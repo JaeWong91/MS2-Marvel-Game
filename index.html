@@ -16,32 +16,20 @@
         <!--<div class="enter-overlay overlay-text visible">
             ENTER
         </div>-->
-        <audio src="assets/audio/marvel-intro.mp3" id="marvel-intro" loop></audio>
+        <audio src="assets/audio/marvel-intro.mp3" id="marvel-intro" autoplay loop></audio>
 		<header>
 			<img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
         </header>
 		<div class="text-center mx-auto align-middle py-5 center-container absolute-center" id="main-menu">
 			<h3>Select a Game</h3>
             <br>
-			<button type="button" id="myBtn" class="btn btn-dark" data-toggle="modal" data-target="">Card Matching</button> <!--the "popup-button" class is a test-->
+			<a href="card-game.html"><button type="button" id="myBtn" class="btn btn-dark" data-toggle="modal" data-target="">Card Matching</button></a>
             <br>
 			<button type="button" class="btn btn-dark mt-2">Battle</button>
 		</div>
 
 
-<!-- THE MODAL-->
 
-		<div id="myModal" class="modal">
-		
-			<!-- THE MODAL CONTENT This is a practice for a modal popup window-->
-			<div class="modal-content center-container absolute-center text-center mx-auto py-">
-				<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-				<h3 class="my-2">Select difficulty</h3>
-				<a href="card-game.html"><button type="button" class="btn btn-success w-50 center mx-auto my-2" href="card-game.html">Easy</button></a>
-				<button type="button" class="btn btn-warning w-50 center mx-auto my-2">Medium</button>
-				<button type="button" class="btn btn-danger w-50 center mx-auto my-2">Hard</button>
-			</div>
-		</div>
 	</section>
 
     <script src="assets/js/script.js"></script>

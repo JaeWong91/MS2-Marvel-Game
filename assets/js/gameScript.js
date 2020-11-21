@@ -1,8 +1,30 @@
 
+// get the modal
+//var modal = document.getElementById("myModal");
 
-//setTimeout(function(){    // DELAY BETWEEN EACH LOOP NOT WORKING
-    //document.getElementById('marvel-intro').play(); 
-//}, 5000);
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
+
+//When the user clicks on the button, open the modal
+//btn.onclick = function() {
+    //modal.style.display = "block";   
+//}
+
+// When the user clicks on <span> (x), close the modal
+//span.onclick = function() {
+    ////modal.style.display = "none";
+//}
+
+// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function(event) {
+//    if (event.target == modal) {
+  //  this.modal.style.display = "none";    
+    //}
+//}
+
 
 class AudioController {
     constructor() {
@@ -38,7 +60,7 @@ class AudioController {
     }
 }
 
-class MixOrMatch {                  // creating a new class
+class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
         this.cardsArray = cards;
         this.totalTime = totalTime;
@@ -154,10 +176,26 @@ class MixOrMatch {                  // creating a new class
 
 
 // card-game.html - making the click to start functionable
+
+
+
 function ready() {
+    
+    let difficultyMenu = document.getElementById('difficulty-menu');        //added this as test
+    let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
+    let cardGame = document.getElementsById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MixOrMatch(90, cards);
+    let game = new MarvelCards(90, cards);
+
+
+    btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
+        btn.addEventListener('click', () => {
+            difficultyMenu.classList.add('hide');
+            cardGame.classList.remove('hide');
+            game.startGame(); 
+        });
+    });
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
@@ -172,8 +210,12 @@ function ready() {
     });
 }
 
-if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
-} else {
-    ready();
-}
+
+
+
+//REMOVING THIS TO TRY AND GET THE MODAL TO WORK
+//if(document.readyState === 'loading') {
+//    document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
+//} else {
+//    ready();
+//}
