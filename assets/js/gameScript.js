@@ -187,7 +187,7 @@ class MarvelCards {                  // creating a new class
 
 
 function ready() {    
-    let difficultyMenu = document.getElementById('difficulty-menu');        //added this as test
+    let cardMenu = document.getElementById('card-menu');        //added this as test
     let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
@@ -197,7 +197,7 @@ function ready() {
 
      btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
         btn.addEventListener('click', () => {
-            difficultyMenu.classList.add('hide');
+            cardMenu.classList.add('hide');
             cardGame.classList.remove('hide');
             game.startGame(); 
         });

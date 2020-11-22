@@ -56,10 +56,10 @@ header {
     animation-duration: 1s;
 }
 
-/* Difficulty select window */
-#difficulty-menu {
+/* card menu window */
+#card-menu {
     width: 280px;
-    height: 280px;
+    height: 150px;
     background-color: rgb(7, 19, 34);
     color: white;
     border: solid 1px;
@@ -176,6 +176,18 @@ header {
     animation-duration: 2s;
 }
 
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);      /* 4 columns that will automatically autosize themselves */
+    grid-gap: 10px;
+}
+
+.card-game-info-container {                     /* non-bootstrap grid system to make the card shuffle functional */
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
 .card-game-info {
     font-size: 30px;
     color: white;
@@ -191,13 +203,13 @@ header {
     min-width: 68px;
     padding-right: 0;
     padding-left: 0;
-    background-color: transparent;
+    background-color: transparent; 
 }
 
 .card-face {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    height: 140px;
+    width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,13 +220,13 @@ header {
 }
 
 .card-front {
-    background-color: white;
+    background-color: white;   
     border: solid 1px black;
     transform: rotateY(180deg);
 }
 
 .card-back {
-    background-color: transparent;
+    background-color: transparent;     TESTING TO SEE IF THIS WILL*/  
     transform: rotateY(0);
     
 }
@@ -293,7 +305,6 @@ header {
     width: 90px;
 }
 
-
 .card:hover {
     transform: rotate(-10deg);
     transition: transform 1s;
@@ -307,4 +318,21 @@ header {
 .card-back:hover .question-mark {
     transform: scale(1.1);
     transition: transform 1s;
+}
+
+
+
+/* CARD PICTURES NOT WORKING AS CLASSES!!!! */
+.black-panther {
+    background: url(.assets/images/black-panther.png);
+}
+
+.spiderman {
+    background-image: url(assets/images/spiderman.png);
+    height: 140px;
+    width: 80px;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	
 }

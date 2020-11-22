@@ -39,12 +39,12 @@
     <!-- <div id="modal" > -->
 
 
-        <div class="center-container absolute-center text-center mx-auto my-auto" id="difficulty-menu">
-				<h3 class="my-2">Select difficulty</h3>
-				<button type="button" class="difficulty-button btn btn-success w-50 center mx-auto my-2">Easy</button>
-				<button type="button" class="btn btn-warning w-50 center mx-auto my-2">Medium</button>
-				<button type="button" class="btn btn-danger w-50 center mx-auto my-2">Hard</button>
+        <div class="center-container absolute-center text-center mx-auto my-auto" id="card-menu">
+				<button type="button" class="card-play-button btn btn-success w-50 center mx-auto mt-4">Play</button>
+				<button type="button" class="btn btn-warning w-50 center mx-auto my-2" id="rules">Rules</button>
 		</div>    
+
+        
 
 
     <!-- </div> -->
@@ -72,7 +72,7 @@
 
 <!-- WHOLE CARD GAME-->
 
-        <div class="card-game-container container hide" id="card-game">   <!-- "added 'hide' class to try and hide the card game before a difficulty is selected-->
+        <div class="card-game-container container hide mt-5 py-3" id="card-game">   <!-- "added 'hide' class to try and hide the card game before a difficulty is selected-->
 			<div class="card-game-info-container row">
 				<div class="col-6 pl-5 card-game-info">
 					Time <span id="time-remaining">90</span>
@@ -83,25 +83,26 @@
 			</div>
 
             <!--Cards -->
-            <div class="container">
-			    <div class="row mx-auto justify-content-center">    <!-- First Row of 4 cards-->
-				    <div class="card col-2 mx-2 my-2">
+            <div class="card-container justify-content-center">
+			       <!-- First Row of 4 cards -->
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
                         <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/spiderman2.png" alt="spiderman">
+                            <div class="spiderman"></div>   <!-- THIS IMAGE IS NOT APPEARING ON THE SITE!!!!!!!-->
+                            <!-- <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">     removing this to try and get the image to appear through css class-->
                         </div>
                     </div>
-					<div class="card col-2 mx-2 my-2">
+					<div class="card mx-2">
 						<div class="card-back card-face">
 							<img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
 					    </div>
 						<div class="card-front card-face">
-							<img class="card-value" src="assets/images/spiderman2.png" alt="spiderman">
+							<img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
 					    </div>
 					</div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -109,7 +110,7 @@
                             <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                         </div>
                     </div>
-                    <div class="card col-2 mx-2 my-2">
+                    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -117,9 +118,9 @@
                             <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                         </div>
                     </div>
-			    </div>
-                <div class="row mx-auto justify-content-center">    <!-- Second Row of 4 cards-->
-				    <div class="card col-2 mx-2 my-2">
+			    
+                    <!-- Second Row of 4 cards-->
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -127,7 +128,7 @@
                             <img class="card-value" src="assets/images/thor.png" alt="thor">
                         </div>
                     </div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -135,7 +136,7 @@
                             <img class="card-value" src="assets/images/thor.png" alt="thor">
                         </div>
                     </div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -143,7 +144,7 @@
                             <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                         </div>
                     </div>
-                    <div class="card col-2 mx-2 my-2">
+                    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -151,9 +152,17 @@
                             <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                         </div>
                     </div>
-			    </div>
-                <div class="row mx-auto justify-content-center">    <!-- Third Row of 4 cards-->
-				    <div class="card col-2 mx-2 my-2">
+			    
+                   <!-- Third Row of 4 cards-->
+				    <div class="card mx-2">
+                        <div class="card-back card-face">
+                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                        </div>
+                        <div class="card-front card-face">
+                            <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
+                        </div>
+                    </div>
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -161,15 +170,7 @@
                             <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
                         </div>
                     </div>
-				    <div class="card col-2 mx-2 my-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
-                        </div>
-                    </div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -177,7 +178,7 @@
                             <img class="card-value" src="assets/images/hulk.png" alt="hulk">
                         </div>
                     </div>
-                    <div class="card col-2 mx-2 my-2">
+                    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -185,9 +186,9 @@
                             <img class="card-value" src="assets/images/hulk.png" alt="hulk">
                         </div>
                     </div>
-			    </div>
-                <div class="row mx-auto justify-content-center">    <!-- Fourth Row of 4 cards-->
-				    <div class="card col-2 mx-2 my-2">
+			    
+                <!-- Fourth Row of 4 cards-->
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -195,7 +196,7 @@
                             <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
                         </div>
                     </div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -203,7 +204,7 @@
                             <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
                         </div>
                     </div>
-				    <div class="card col-2 mx-2 my-2">
+				    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -211,7 +212,7 @@
                             <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
                         </div>
                     </div>
-                    <div class="card col-2 mx-2 my-2">
+                    <div class="card mx-2">
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
@@ -219,7 +220,7 @@
                             <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
                         </div>
                     </div>
-			    </div>
+			    
             </div>
         </div>
 	</section>
