@@ -226,7 +226,7 @@ header {
 }
 
 .card-back {
-    background-color: transparent;     TESTING TO SEE IF THIS WILL*/  
+    background-color: transparent;     /* TESTING TO SEE IF THIS WILL*/  
     transform: rotateY(0);
     
 }
@@ -324,15 +324,75 @@ header {
 
 /* CARD PICTURES NOT WORKING AS CLASSES!!!! */
 .black-panther {
-    background: url(.assets/images/black-panther.png);
+    background-image: url('../images/black-panther.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .spiderman {
-    background-image: url(assets/images/spiderman.png);
-    height: 140px;
-    width: 80px;
+    background-image: url('../images/spiderman.png');
+    height: 100%;
+    width: 100%;
     background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	
 }
+
+.black-widow {
+    background-image: url('../images/black-widow.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.cap-america {
+    background-image: url('../images/cap-america.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.hulk {
+    background-image: url('../images/hulk.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ironman {
+    background-image: url('../images/ironman.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.thor {
+    background-image: url('../images/thor.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.wolverine {
+    background-image: url('../images/wolverine.png');
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+

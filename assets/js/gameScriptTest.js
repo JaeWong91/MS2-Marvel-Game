@@ -74,7 +74,7 @@ class MarvelCards {                  // creating a new class
         this.audioController = new AudioController();   // this audio controller belongs to this particular object
     }
     startGame() {
-        this.cardToCheck = null; //
+        this.firstCardFlip = null; //
         this.totalClicks = 0;   
         this.timeRemaining = this.totalTime;  // this will reset time on each restart of the game
         this.matchedCards = [];  // the matched cards will be in this array
@@ -105,20 +105,20 @@ class MarvelCards {                  // creating a new class
             this.ticker.innerText = this.totalClicks;
             card.classList.add('visible');
 
-            if(this.cardToCheck)         // if this.cardToCheck is NOT null
-                this.checkForCardMatch(card);
+            if(this.firstCardFlip)         // if this.firstCardFlip is NOT null
+                this.checkForCardMatch(card); 
             else
-                this.cardToCheck = card;        
+                this.firstCardFlip = card;        
         }
     }
 
     checkForCardMatch(card) {
-        if(this.getCardType(card) === this.getCardType(this.cardToCheck))   
-            this.cardMatch(card, this.cardToCheck);
+        if(this.getCardType(card) === this.getCardType(this.firstCardFlip))   
+            this.cardMatch(card, this.firstCardFlip);
         else
-            this.cardMisMatch(card, this.cardToCheck);
+            this.cardMisMatch(card, this.firstCardFlip);
 
-        this.cardToCheck = null; 
+        this.firstCardFlip = null; 
     }
 
     cardMatch(card1, card2) {
@@ -141,7 +141,7 @@ class MarvelCards {                  // creating a new class
     }
 
     getCardType(card) {
-        return card.getElementsByClassName('card-value')[0].src;             // [0] because its only one card-- this is checking the "card" class which is the block. within that block is the file source of the image, eg "assets/images/thor.png"
+        return card.getElementsByClassName('card-face')[0].getElementsByTagName('span');        // [0] because its only one card-- this is checking the "card-front" class which is the block. within that block is the file source of the image, eg "assets/images/thor.png"
     }
 
     startCountDown() {
@@ -174,7 +174,7 @@ class MarvelCards {                  // creating a new class
     }
 
     canFlipCard(card) {                                                                         // here if the below statement is true, then the player can flip the card
-        return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck // This creates a boolean - here is if statement so if (! means is not) all 3 statements are all FALSE then the statement will be true.
+        return !this.busy && !this.matchedCards.includes(card) && card !== this.firstCardFlip // This creates a boolean - here is if statement so if (! means is not) all 3 statements are all FALSE then the statement will be true.
     }
 }
 
@@ -188,7 +188,8 @@ function ready() {
     let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
-    let cards = Array.from(document.getElementsByClassName('card'));
+    const cardPictures = ['spiderman', 'black-panther', 'black-widow', 'wolverine', 'cap-america', 'hulk', 'ironman', 'thor']; 
+    let cards = Array.from(document.getElementsByClassName('card'));   
     let game = new MarvelCards(90, cards);
 
 
