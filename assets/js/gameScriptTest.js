@@ -1,4 +1,3 @@
-
 // get the modal
 //var modal = document.getElementById("myModal");
 
@@ -64,6 +63,9 @@ class AudioController {
     }
 }
 
+
+
+
 class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -82,7 +84,8 @@ class MarvelCards {                  // creating a new class
         
         setTimeout(() => {
             this.audioController.startMusic();
-            this.shuffleCards();
+            this.shuffleCards();              
+            this.assignPicToCard();         //testing this
             this.countDown = this.startCountDown();
             this.busy = false;
         },100);
@@ -176,10 +179,22 @@ class MarvelCards {                  // creating a new class
     canFlipCard(card) {                                                                         // here if the below statement is true, then the player can flip the card
         return !this.busy && !this.matchedCards.includes(card) && card !== this.firstCardFlip // This creates a boolean - here is if statement so if (! means is not) all 3 statements are all FALSE then the statement will be true.
     }
+
+
+    //TESTING - TRYING TO ASSIGN ALL CARDS WITH AN IMAGE FROM AN ARRAY
+
+    assignPicToCard() {
+        const cardPictures = ['spiderman', 'black-panther', 'black-widow', 'wolverine', 'cap-america', 'hulk', 'ironman', 'thor'];      //Array of images
+        var cardFace = Array.from(document.getElementsByClassName('card-face'));        //put the cards into an array 
+        for(let j = 0; j < cardPictures.length; j++)
+        for(let i = 0; i < cardFace.length; i++) 
+                 cardFace[i].classList.add(cardPictures[j]);
+                    
+    };
+
+
+    // ^^^^ THIS IS A TEST TO ASSIGN CARDS WITH AN IMAGE FROM ARRAY
 }
-
-
-// card-game.html - making the click to start functionable
 
 
 
@@ -188,12 +203,13 @@ function ready() {
     let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
-    const cardPictures = ['spiderman', 'black-panther', 'black-widow', 'wolverine', 'cap-america', 'hulk', 'ironman', 'thor']; 
+     
     let cards = Array.from(document.getElementsByClassName('card'));   
     let game = new MarvelCards(90, cards);
 
+    
 
-     btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
+    btns.forEach(btn => {                     // added this as test - Trying to get the buttons-menu to close when a button is clicked
         btn.addEventListener('click', () => {
             cardMenu.classList.add('hide');
             cardGame.classList.remove('hide');
@@ -216,12 +232,12 @@ function ready() {
 }
 
 
-
-
 //REMOVING THIS TO TRY AND GET THE MODAL TO WORK
 
 if(document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
 } else {
     ready();
+    
 }
+
