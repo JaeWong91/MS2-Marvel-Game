@@ -59,7 +59,7 @@ header {
 /* card menu window */
 #card-menu {
     width: 280px;
-    height: 150px;
+    height: 500px;
     background-color: rgb(7, 19, 34);
     color: white;
     border: solid 1px;
@@ -152,13 +152,13 @@ header {
 }
   /* this is the exit button on the card-game page */
 .exit-button {
-  position: absolute;
-  font-size: 22px;
-  background-color: orange;
-  color: black;
-  border: solid 1px white;
-  line-height: 1.1;
- 
+    position: absolute;
+    font-size: 22px;
+    background-color: orange;
+    color: black;
+    border: solid 1px white;
+    line-height: 1.1;
+    z-index: 1000;
 }
 
 .exit-button:hover {
@@ -178,7 +178,7 @@ header {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, auto);      /* 4 columns that will automatically autosize themselves */
+    grid-template-columns: repeat(5, auto);      /* 4 columns that will automatically autosize themselves */
     grid-gap: 10px;
 }
 
@@ -396,3 +396,80 @@ header {
 	background-position: center;
 }
 
+/* Battle Page CSS */
+
+.battle-container {
+    background-color: rgb(56, 21, 21);
+    border: solid 1px black;
+    opacity: 0.95;
+    height: 80vh;
+    animation-name: animateappear;
+    animation-duration: 2s;
+}
+
+.spiderman-battle {   /*spiderman image*/
+    width: 20vw;
+    max-width: 230px;
+    /* margin-top: 50px; */
+    border: 1px solid white;
+    /*margin-top: 200px;*/
+}
+
+.green-goblin {        /*Green goblin image*/
+    width: 20vw;
+    max-width: 230px;
+    /* margin-top: 50px; */
+    border: 1px solid white;
+    /* margin-top: 200px; */
+    
+}
+
+#toprow {
+    
+}
+
+#bottomRow {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.stats {
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    visibility: hidden;
+}
+
+.healthLabel {
+    color: white;
+    font-size: 20px;
+}
+
+.movesLabel {
+    color: white;
+    font-size: 18px;
+}
+
+.buttonStyle {    /* these are the moves buttons */
+    background-color: white;
+    border: 3px solid black;
+}
+
+.buttonStyle:hover {
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+}
+
+.hpBorder {
+    width: 150px;
+    height: 30px;
+    border: 3px solid black;
+}
+
+.hpBar {
+    width: 144px;               /*this is to house the green hp bar inside the hpBorder, border is 3px so 2*3 = 6px */
+    height: 24px;
+    background-color: green;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!-- JQuery CDN-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+	<title>Marvel</title>
+</head>
+
+<body>
+	<section class="marvel-background">
+        <header>
+			<span class="d-block mx-auto px-2 card-game-title text-center">BATTLE</span>
+        </header>
+        <audio src="assets/audio/marvel-intro.mp3" id="marvel-intro" loop></audio>
+		<a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>  <!-- Exit button -->
+
+	</section>
+    <!--Battle game container-->
+    <section class="battle-container container-fluid mt-5">
+        <div class="row align-items-end justify-content-center d-flex mt-5" id="topRow">
+            <div class="stats col-2" id="spidermanStats" >
+                <span class="healthLabel text-right">HEALTH</span>
+                <div class="hpBorder">
+                    <div id="spidermanHP" class="hpBar"></div>
+                </div>
+                <p class="movesLabel mb-0 mt-2">MOVES</p>
+                <button class="buttonStyle" onclick="webShooter()">Web-Shooter</button>  <!-- function for an attack  -->
+            </div>
+            <div class="col-3" id="battleSpiderman"> 
+                <img class="spiderman-battle" src="assets/images/spiderman-battle.png" alt="spiderman">
+            </div>
+            <div class="col-3" id="battleGreenGoblin">
+                <img class="green-goblin float-right" src="assets/images/green-goblin2.png" alt="green goblin">
+            </div>
+            <div class="stats col-2" id="greenGoblinStats" >
+                <span class="healthLabel">HEALTH</span><br>
+                <div class="hpBorder">
+                    <div id="greenGoblinHP" class="hpBar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottomRow">
+            <h4>Welcome to the Battle Arena!</h4>
+            <h5>You are Spiderman facing off against Green Goblin!</h5>
+            <button class="buttonStyle" onclick="beginBattle()">BEGIN BATTLE</button>
+        </div>
+    </section>
+
+    <script src="assets/js/battleScript.js"></script>
+
+</body>
+
+</html>

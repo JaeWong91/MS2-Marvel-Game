@@ -73,42 +73,42 @@ class MarvelCards {                  // creating a new class
         this.ticker = document.getElementById('attempts');    // changed from flips to attempts
         this.audioController = new AudioController();   // this audio controller belongs to this particular object
     }
-    startGame() {
-        this.cardToCheck = null; //
+    startGame() {                       // At each start of game, the below will be executed
+        this.cardToCheck = null; // 
         this.totalClicks = 0;   
         this.timeRemaining = this.totalTime;  // this will reset time on each restart of the game
         this.matchedCards = [];  // the matched cards will be in this array
         this.busy = true; //starting off as true, we will put false when we start the game
         
-        setTimeout(() => {
+        setTimeout(() => {  
             this.audioController.startMusic();
             this.shuffleCards();
             this.countDown = this.startCountDown();
-            this.busy = false;
+            this.busy = false;          //every timeout will set 'busy' to false;
         },100);
-        this.hideCards();
-        this.timer.innerText = this.timeRemaining;
+        this.hideCards();       //activate function hide cards
+        this.timer.innerText = this.timeRemaining;   
         this.ticker.innerText = this.totalClicks;
     } 
 
-    hideCards() {
-        this.cardsArray.forEach(card => {
-            card.classList.remove('visible');
-            card.classList.remove('matched');
+    hideCards() {           //the hide card function
+        this.cardsArray.forEach(card => {           //for all the cards in the array, each card will
+            card.classList.remove('visible');       //remove visible
+            card.classList.remove('matched');       // and apply matched class
         });
     }
 
-    flipCard(card) {            
-        if(this.canFlipCard(card)) {            //this function increases the number of Attempts per click
-            this.audioController.flip();
-            this.totalClicks++; 
-            this.ticker.innerText = this.totalClicks;
-            card.classList.add('visible');
+    flipCard(card) {                            //the flip card function
+        if(this.canFlipCard(card)) {            //testing if 'card' can be flipped - if yes then...
+            this.audioController.flip();        //the flip sound will activate
+            this.totalClicks++;                 //the number of total clicks increases by 1
+            this.ticker.innerText = this.totalClicks;   //the actual inner text of the "ticker" will equal the totalClicks (which will increase by 1 per click)
+            card.classList.add('visible');      //each card clicked/flipped will have the "visible" class applied to it, hence flipping it
 
-            if(this.cardToCheck)         // if this.cardToCheck is NOT null
-                this.checkForCardMatch(card);
+            if(this.cardToCheck)         // if this.cardToCheck is NOT null then...
+                this.checkForCardMatch(card);   //function to check for card match will activate (passing the "card" parameter into it)
             else
-                this.cardToCheck = card;        
+                this.cardToCheck = card;        //if this.cardToCheck IS null then "cardToCheck" becomes "card"
         }
     }
 
@@ -164,9 +164,9 @@ class MarvelCards {                  // creating a new class
         document.getElementById('victory-text').classList.add('visible');
     }
 
-    //SHUFFLE ALGORITHM
+    //SHUFFLE ALGORITHM  --- Fisher Yates algorithm
     shuffleCards() {
-        for(let i = this.cardsArray.length - 1; i > 0; i--) {                                 //Fisher Yates algorithm
+        for(let i = this.cardsArray.length - 1; i > 0; i--) {                                 
             let randIndex = Math.floor(Math.random() * (i+1));
             this.cardsArray[randIndex].style.order = i;
             this.cardsArray[i].style.order = randIndex;
@@ -182,19 +182,48 @@ class MarvelCards {                  // creating a new class
 // card-game.html - making the click to start functionable
 
 
+/* function hideMediumHard(); // TESTING THE DIFFICULTY FUNCTION TO WORK
+    var mediumCards = Array.from(document.getElementsByClassName(medium));
+    var hardCards = Array.from(document.getElementsByClassName(hard));
+    this.mediumCards.classList.add('hide');
+    this.hardCards.classList.add('hide');
+    game.startGame(); */
+
+
 
 function ready() {    
     let cardMenu = document.getElementById('card-menu');        //added this as test
-    let btns = Array.from(document.getElementsByClassName('btn'));  //added this as test - takes all the buttons into an array
+   // let playButton = document.getElementsByClassName('card-play-button');
+    let btns = Array.from(document.getElementsByClassName('card-play-button'));  //working button function
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
+    //let difficultyLevel = ""   // TESTING THIS MYSELF
+    //let easyDifficulty = Array.from(document.getElementsByClassName('easy'));
+    //let mediumDifficulty = Array.from(document.getElementsByClassName('medium'));
+    //let hardDifficulty = Array.from(document.getElementsByClassName('hard'));
     let game = new MarvelCards(90, cards);
 
+    
 
-     btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
+    /*easyDifficulty.onClick = function() {             //This function not working
+        mediumDifficulty.classList.add('hide');
+        hardDifficulty.classList.add('hide');
+    }; */
+
+     //   playButton.addEventListener('click', () => {
+     //       cardMenu.classList.add('hide');
+    //        cardGame.classList.remove('hide');
+    //        game.startGame();
+    //    }); 
+     
+
+    // console.log(hardDifficulty);
+    
+
+    btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
         btn.addEventListener('click', () => {
-            cardMenu.classList.add('hide');
+           cardMenu.classList.add('hide');
             cardGame.classList.remove('hide');
             game.startGame(); 
         });
@@ -203,7 +232,6 @@ function ready() {
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
             overlay.classList.remove('visible');
-
             game.startGame();                       //here when you click on the overlay, it will start the game
         });
     });
