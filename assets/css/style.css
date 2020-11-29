@@ -473,3 +473,15 @@ header {
     height: 24px;
     background-color: green;
 }
+
+.volume-icon {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    border: none;
+}
+
+.volume-icon:hover {
+    color: grey;
+}
