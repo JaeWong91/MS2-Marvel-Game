@@ -411,7 +411,6 @@ header {
     width: 20vw;
     max-width: 230px;
     /* margin-top: 50px; */
-    border: 1px solid white;
     /*margin-top: 200px;*/
 }
 
@@ -419,14 +418,11 @@ header {
     width: 20vw;
     max-width: 230px;
     /* margin-top: 50px; */
-    border: 1px solid white;
     /* margin-top: 200px; */
     
 }
 
-#toprow {
-    
-}
+
 
 #bottomRow {
     padding: 20px;
@@ -437,8 +433,12 @@ header {
 .stats {
     height: 200px;
     width: 200px;
-    border: 1px solid white;
     visibility: hidden;
+}
+
+.characterLabel {
+    color: white;
+    font-size: 30px;
 }
 
 .healthLabel {
