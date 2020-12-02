@@ -111,7 +111,7 @@ header {
   cursor: pointer;
 }
 
-@keyframes animatetop {     /* taken from w3schools */
+@keyframes animatetop {     /* taken from w3schools - to make an element appear from the top and fade in-like effect*/ 
   from {
     top: -400px;
     opacity: 0;
@@ -484,4 +484,16 @@ header {
 
 .volume-icon:hover {
     color: grey;
+}
+
+@keyframes spidermanAttack {
+   from {
+       left: -10px;
+   }
+   50% {
+       left: 100%;
+   }
+   to { 
+       left: 10px;
+   }
 }

@@ -85,7 +85,7 @@ class MarvelCards {                  // creating a new class
             this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;          //every timeout will set 'busy' to false;
-        },100);
+        },1000);
         this.hideCards();       //activate function hide cards
         this.timer.innerText = this.timeRemaining;   
         this.ticker.innerText = this.totalClicks;
