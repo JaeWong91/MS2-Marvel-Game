@@ -243,8 +243,6 @@ function ready() {
 }
 
 
-
-
 //REMOVING THIS TO TRY AND GET THE MODAL TO WORK
 
 if(document.readyState === 'loading') {
