@@ -73,16 +73,22 @@ header {
   font-size: 22px;
 }
 
+hr {
+  border: 1px solid white;
+  width: 400px;
+}
+
+
 /* Difficulty select window - changed the model to be a normal menu instead, can delete this! */
 .modal-content {
   position: absolute;
-  width: 280px;
-  height: 340px;
+  width: 550px;
+  height: 700px;
   background-color: rgb(7, 19, 34);
   color: white;
   border: solid 1px;
   border-color: white;
-  z-index: 100000;
+  z-index: 10;
   animation-name: animatetop;
   animation-duration: 1s;
 }
@@ -425,6 +431,7 @@ header {
 
 
 #bottomRow {
+    font-size: 22px;
     padding: 20px;
     color: white;
     text-align: center;
@@ -474,18 +481,33 @@ header {
     background-color: green;
 }
 
-.volume-icon {
+.audio-control {
+    font-size: 24px;
+}
+
+#audioSettings {
     position: absolute;
-    font-size: 40px;
+    font-size: 38px;
     color: white;
-    background: transparent;
-    border: none;
+    background: black;
+    border: solid 1px white;
+}
+
+.volume-icon {
+    position: relative;
+    color: white;
+    background: red;
+    border: solid 1px white;
 }
 
 .volume-icon:hover {
     color: grey;
 }
 
+.slider {
+    width: 250px;
+    
+}
 
 
 /* Battle Animations */

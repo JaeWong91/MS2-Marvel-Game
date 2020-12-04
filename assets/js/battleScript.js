@@ -16,13 +16,47 @@ var goblinHP = 100;
 
 //music and sound controls
 var musicControls = document.getElementById('music-controls');
-var state = "on"; //default music is on/unmuted
+var bgMusicState = "on"; //default background music is on/unmuted
 
 var battleMusic = document.getElementById('spidermanMusic');
 battleMusic.loop = true;
 var webShootSound = new Audio('assets/audio/web-shoot.wav');
 var webSwingSound = new Audio('assets/audio/swing-kick.wav');
 var punchSound = new Audio('assets/audio/punch.wav');
+
+
+// MODAL //
+
+var modal = document.getElementById("myModal"); // Get the modal
+var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
+var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
+
+audioSetting.onclick = function() {     // When the user clicks the button, open the modal
+  modal.style.display = "block";
+}
+
+span.onclick = function() {     // When the user clicks on <span> (x), close the modal
+  modal.style.display = "none";
+}
+
+
+//Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
+var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
+    musicVolumeSlider.addEventListener('input', () => {    // 
+    battleMusic.volume = musicVolumeSlider.valueAsNumber / 100;
+    });
+
+function muteMusic(){
+    if (bgMusicState == "off"){
+        bgMusicState = "on";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        battleMusic.play();
+    } else {
+        bgMusicState = "off";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        battleMusic.pause();
+    }
+}
 
 
 //disabling all spiderman moves for 2 seconds when clicked to allow animations/audio and goblin retaliation to play out.
@@ -41,17 +75,6 @@ function enableMoves() {
 //spidermanMoves.disabled = true;
     //setTimeout(function(){spidermanMoves = false;}, 2000);
 
-function mute(){
-    if (state == "off"){
-        state = "on";
-        musicControls.innerHTML = "<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
-        battleMusic.play();
-    } else {
-        state = "off";
-        musicControls.innerHTML = "<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
-        battleMusic.pause();
-    }
-}
 
 
 
@@ -62,8 +85,6 @@ function beginBattle() {
     for (var x=0; x < stats.length; x++) {      // loop to change all stats elements (there are 2 of them, 1 for spiderman and 1 for green goblin) from hidden to visible
         stats[x].style.visibility = "visible";
         battleMusic.play();
-        battleMusic.volume = 0.2;
-        
     }
     
 }
