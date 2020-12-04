@@ -7,7 +7,6 @@ var greenGoblinHP = document.getElementById('greenGoblinHP'); //this is the HP b
 var spidermanMoves = document.getElementById('spidermanMoves'); // the buttons for spiderman's moves NOT WORKING
 var spidermanMoves = Array.from(document.getElementsByClassName('spidermanMove'));
 let overlays = Array.from(document.getElementsByClassName('overlay-text'));
-
 var spidermanImage = document.getElementsByClassName('spiderman-battle'); // TESTING TO GET SPIDERMAN TO ANIMATE FOR EACH CLICK OF A MOVE
 
 //Define health variables
@@ -18,12 +17,15 @@ var goblinHP = 100;
 var musicControls = document.getElementById('music-controls');
 var bgMusicState = "on"; //default background music is on/unmuted
 
+
 var battleMusic = document.getElementById('spidermanMusic');
 battleMusic.loop = true;
 var webShootSound = new Audio('assets/audio/web-shoot.wav');
 var webSwingSound = new Audio('assets/audio/swing-kick.wav');
 var punchSound = new Audio('assets/audio/punch.wav');
-
+var pumpkinBombSound = new Audio('assets/audio/pumpkin-bomb.mp3')
+var gliderSound = new Audio('assets/audio/glider.mp3');
+var poisonSpraySound = new Audio('assets/audio/poison-spray.mp3')
 
 // MODAL //
 
@@ -31,14 +33,13 @@ var modal = document.getElementById("myModal"); // Get the modal
 var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
 var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
 
-audioSetting.onclick = function() {     // When the user clicks the button, open the modal
+audioSetting.onclick = function() {     // When the user clicks music icon, open the modal
   modal.style.display = "block";
 }
 
 span.onclick = function() {     // When the user clicks on <span> (x), close the modal
   modal.style.display = "none";
 }
-
 
 //Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
 var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
@@ -89,9 +90,11 @@ function beginBattle() {
     
 }
 
-function goblinAttack() {   //goblin moves - glider sweep, pumpkin bomb, , poison gas
+function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3=pumpkin bomb
     var attackChoice = Math.ceil(Math.random()*3) // 3 for goblin moves, used Math.ceil so it rounds up, we don't want it to round down to 0
+    
     if (attackChoice == 1) {  // GLIDER ATTACK
+        gliderSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 7) { 
             var dmg = Math.round(Math.random() * 10) + 10; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
@@ -99,13 +102,17 @@ function goblinAttack() {   //goblin moves - glider sweep, pumpkin bomb, , poiso
             if (spiderHP < 0) {  // if hp goes negative, it will bring it to 0
                 spiderHP = 0;
             }
-            bottomRow.innerHTML += "<br>Green Goblin attacked you with his glider, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
-            var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-            spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            function gliderAttack() {
+                bottomRow.innerHTML += "<br>Green Goblin attacked you with his glider, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
+                var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+                spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            } 
+            setTimeout(gliderAttack, 2000);
         } else {
             bottomRow.innerHTML += "<br>Spiderman dodged Green Goblin's glider sweep!!"
         }
     } else if (attackChoice == 2) { 
+        poisonSpraySound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 4) {
             var dmg = Math.round(Math.random() * 10) + 15; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
@@ -113,23 +120,31 @@ function goblinAttack() {   //goblin moves - glider sweep, pumpkin bomb, , poiso
             if (spiderHP < 0) {  
                 spiderHP = 0;
             }
-            bottomRow.innerHTML += "<br>Green Goblin used poison gas, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
+            function poisonAttack() {
+                bottomRow.innerHTML += "<br>Green Goblin used poison gas, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
             var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
             spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            }
+            setTimeout(poisonAttack, 2000);
         } else {
             bottomRow.innerHTML += "<br>Spiderman avoided Green Goblin's gas!!"
         }
     } else {
+        pumpkinBombSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 3) { //PUMKPIN BOMB
+            
             var dmg = Math.round(Math.random() * 10) + 20; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // 
             if (spiderHP < 0) {  // 
                 spiderHP = 0;
             }
-            bottomRow.innerHTML += "<br>Green Goblin threw a Pumpkin Bomb, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
-            var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-            spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            function pumpkinAttack(){
+                bottomRow.innerHTML += "<br>Green Goblin threw a Pumpkin Bomb, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
+                var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+                spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            }
+            setTimeout(pumpkinAttack, 2000);
         } else {
             bottomRow.innerHTML += "<br>Spiderman's spider sense helped him avoid the Pumpkin Bomb!!"
         }
@@ -152,9 +167,12 @@ function webShooter() {
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
         }
+        function webShooterAttack() {
             bottomRow.innerHTML = "You hit Green Goblin with your web shooter, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP.";
-        var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-        greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+            var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+            greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        }
+        setTimeout(webShooterAttack, 2000);
     } else {
         bottomRow.innerHTML = "Spiderman's attack missed!"
     }
@@ -165,8 +183,8 @@ function webShooter() {
         //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
     } else {
         disableMoves();
-        setTimeout(enableMoves, 1700);
-        setTimeout(goblinAttack, 1700); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
+        setTimeout(enableMoves, 5000);
+        setTimeout(goblinAttack, 2700); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
         
     }
 }
@@ -181,9 +199,11 @@ function webSwing () {
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
         }
-        bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
-        var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-        greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        function webSwingAttack() {bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
+            var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+            greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        }
+        setTimeout(webSwingAttack, 2000);
     } else {
         bottomRow.innerHTML = "Spiderman's attack missed!"
     }
@@ -195,8 +215,8 @@ function webSwing () {
         //spidermanMoves.style.visibility = "hidden";
     } else {
         disableMoves();
-        setTimeout(enableMoves, 2000);
-        setTimeout(goblinAttack, 2000); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
+        setTimeout(enableMoves, 5000);
+        setTimeout(goblinAttack, 3000); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
     }
 }
 
@@ -210,9 +230,12 @@ function punch () {
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
         }
-        bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
-        var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-        greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        function punchAttack() {
+            bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
+            var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+            greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        }
+        setTimeout(punchAttack, 2000);
     } else {
         bottomRow.innerHTML = "Spiderman's attack missed!"
     }
@@ -224,8 +247,8 @@ function punch () {
         //spidermanMoves.style.visibility = "hidden"; Removes this as may not need again
     } else {
         disableMoves();
-        setTimeout(enableMoves, 1000);
-        setTimeout(goblinAttack, 1000); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
+        setTimeout(enableMoves, 5000);
+        setTimeout(goblinAttack, 2500); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
     }
 }
 
