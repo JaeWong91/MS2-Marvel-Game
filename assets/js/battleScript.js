@@ -35,7 +35,6 @@ gliderSound.volume = 0.4;
 var poisonSpraySound = new Audio('assets/audio/poison-spray.mp3')
 
 // MODAL //
-
 var modal = document.getElementById("myModal"); // Get the modal
 var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
 var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
@@ -133,7 +132,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         gliderSweepAnimation();
         gliderSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 9) { 
+        if (hitChance <= 7) { 
             var dmg = Math.round(Math.random() * 10) + 10; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
             if (spiderHP < 0) {  // if hp goes negative, it will bring it to 0
@@ -155,7 +154,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         poisonGasAnimation()
         poisonSpraySound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 6) {
+        if (hitChance <= 5) {
             var dmg = Math.round(Math.random() * 10) + 15; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // 
             if (spiderHP < 0) {  
@@ -177,7 +176,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         pumpkinBombAnimation();
         pumpkinBombSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 5) { //PUMKPIN BOMB
+        if (hitChance <= 4) { //PUMKPIN BOMB
             
             var dmg = Math.round(Math.random() * 10) + 20; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     

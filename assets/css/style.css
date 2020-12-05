@@ -2,7 +2,6 @@
 
 body {
   font-family: "Anton", sans-serif;
-  
 }
 
 header {
@@ -56,7 +55,7 @@ header {
     animation-duration: 1s;
 }
 
-/* card menu window */
+/* card page menu  */
 #card-menu {
     width: 280px;
     height: 300px;
@@ -78,9 +77,6 @@ hr {
   width: 400px;
 }
 
-
-
-/* Difficulty select window - changed the model to be a normal menu instead, can delete this! */
 .modal-content {
   position: absolute;
   width: 550px;
@@ -144,8 +140,6 @@ hr {
   }
 }
 
-
-
 .center-container {
   /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   position: relative;
@@ -153,7 +147,7 @@ hr {
 }
 
 .absolute-center {
-  /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
+  /* test for centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -408,13 +402,14 @@ hr {
 	background-position: center;
 }
 
-/* Battle Page CSS */
+
+/*------ Battle Page CSS -------*/
 
 .battle-container {
     background-color: rgb(56, 21, 21);
     border: solid 1px black;
     opacity: 0.95;
-    height: 80vh;
+    
     animation-name: animateappear;
     animation-duration: 2s;
 }
@@ -422,19 +417,14 @@ hr {
 .spiderman-battle {   /*spiderman image*/
     width: 20vw;
     max-width: 230px;
-    /* margin-top: 50px; */
-    /*margin-top: 200px;*/
+    min-width: 200px;
 }
 
 .green-goblin {        /*Green goblin image*/
     width: 20vw;
     max-width: 230px;
-    /* margin-top: 50px; */
-    /* margin-top: 200px; */
-    
+    min-width: 200px;
 }
-
-
 
 #bottomRow {
     font-size: 22px;
@@ -525,7 +515,6 @@ hr {
     
 }
 
-
 /* Battle Animations */
 
 .punchAnimation {
@@ -533,18 +522,6 @@ hr {
 }
 
 @keyframes punchAnimation {             /* w3 schools animation demo*/
-    /* 0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); } */
-
     0% { transform: translate(0px, 0px) rotate(0deg); }
     20% { transform: translate(6px, 0px) rotate(5deg); }
     100% { transform: translate(0px, 0px) rotate(0deg); }
@@ -587,12 +564,6 @@ hr {
     80% { transform: translate(2px, 0px) rotate(0deg); }
     85% { transform: translate(10px, -3px) rotate(-3deg); }
     100% { transform: translate(20px, -6px) rotate(-4deg); }
-}
-
-
-/*TESTING GOBLIN ANIMATIONS WITH HOVER */
-.green-goblin:hover {
-    animation: poisonGasAnimation 1s;
 }
 
 .gliderSweepAnimation {
@@ -641,4 +612,25 @@ hr {
     80% { transform: translate(-4px, 0px) rotate(-1deg); }
     85% { transform: translate(0px, 0px) rotate(0deg); }
     100% { transform: translate(-4px, 0px) rotate(1deg); }
+}
+
+
+
+/* Media Queries for page size responsiveness*/
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(4, auto)
+  }
+
+  .card-game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 850px) {
+    #greenGoblinStats {
+        height: 100px;
+    }
 }

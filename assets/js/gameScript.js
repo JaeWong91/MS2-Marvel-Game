@@ -1,30 +1,3 @@
-
-// get the modal
-//var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-//var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-//var span = document.getElementsByClassName("close")[0];
-
-//When the user clicks on the button, open the modal
-//btn.onclick = function() {
-    //modal.style.display = "block";   
-//}
-
-// When the user clicks on <span> (x), close the modal
-//span.onclick = function() {
-    ////modal.style.display = "none";
-//}
-
-// When the user clicks anywhere outside of the modal, close it
-//window.onclick = function(event) {
-//    if (event.target == modal) {
-  //  this.modal.style.display = "none";    
-    //}
-//}
-
 // --- Music and Sounds ---//
 class AudioController {
     constructor() {
@@ -35,6 +8,7 @@ class AudioController {
         this.gameOverSound = new Audio('assets/audio/fail.wav');
         this.bgMusic.volume = 0.2; 
         this.bgMusic.loop = true;
+
         this.flipSound.volume = 0.5;
     }
     startMusic() {
@@ -63,6 +37,8 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
+
+
 
 class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
@@ -249,4 +225,41 @@ if(document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
 } else {
     ready();
+}
+
+// MODAL //
+var modal = document.getElementById("myModal"); // Get the modal
+var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
+var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
+
+audioSetting.onclick = function() {     // When the user clicks music icon, open the modal
+  modal.style.display = "block";
+}
+
+span.onclick = function() {     // When the user clicks on <span> (x), close the modal
+  modal.style.display = "none";
+}
+
+
+var musicControls = document.getElementById('music-controls');
+var bgMusicState = "on"; //default background music is on/unmuted
+var soundEffectsControls = document.getElementById('effects-controls');
+var soundEffectsState = "on";
+
+//Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
+var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
+    musicVolumeSlider.addEventListener('input', () => {    // 
+    battleMusic.volume = musicVolumeSlider.valueAsNumber / 100;
+    });
+
+function muteMusic(){
+    if (bgMusicState == "off"){
+        bgMusicState = "on";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        MarvelCards.AudioController.this.bgMusic.play();
+    } else {
+        bgMusicState = "off";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        MarvelCards.AudioController.this.bgMusic.pause();
+    }
 }
