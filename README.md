@@ -18,3 +18,6 @@ Audio sites
 2) https://medea-music.com/artist-management-2/ - Avengers theme song
 3) https://bestringtoness.com/ - Marvel intro music
 4) https://spiderman-theme.mp3quack.live/ - spiderman movie theme
+5) https://www.zapsplat.com/sound-effect-categories/ - Sound effects for Green Goblin
+
+Known Bugs

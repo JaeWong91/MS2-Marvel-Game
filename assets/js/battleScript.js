@@ -16,15 +16,21 @@ var goblinHP = 100;
 //music and sound controls
 var musicControls = document.getElementById('music-controls');
 var bgMusicState = "on"; //default background music is on/unmuted
+var soundEffectsControls = document.getElementById('effects-controls');
+var soundEffectsState = "on";
 
-
+//Background Music
 var battleMusic = document.getElementById('spidermanMusic');
 battleMusic.loop = true;
+battleMusic.volume = 0.3;
+
+//Sound Effects
 var webShootSound = new Audio('assets/audio/web-shoot.wav');
 var webSwingSound = new Audio('assets/audio/swing-kick.wav');
 var punchSound = new Audio('assets/audio/punch.wav');
 var pumpkinBombSound = new Audio('assets/audio/pumpkin-bomb.mp3')
 var gliderSound = new Audio('assets/audio/glider.mp3');
+gliderSound.volume = 0.5;
 var poisonSpraySound = new Audio('assets/audio/poison-spray.mp3')
 
 // MODAL //
@@ -59,6 +65,41 @@ function muteMusic(){
     }
 }
 
+//volume control for sound effects 
+var soundEffectsSlider = document.querySelector('#effects-volume-slider'); // get slider
+    soundEffectsSlider.addEventListener('input', () => {    // 
+    webShootSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    webSwingSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    punchSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    pumpkinBombSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    gliderSound.volume = (soundEffectsSlider.valueAsNumber / 100) * 0.3;
+    poisonSpraySound.volume = soundEffectsSlider.valueAsNumber / 100;
+    });
+
+function muteSoundEffects(){
+    if (soundEffectsState == "off"){
+        soundEffectsState = "on";
+        soundEffectsControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteSoundEffects()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        webShootSound.volume = 1;
+        webSwingSound.volume = 1;
+        punchSound.volume = 1;
+        pumpkinBombSound.volume = 1;
+        gliderSound.volume = 0.3;
+        poisonSpraySound.volume = 1;
+    } else {
+        soundEffectsState = "off";
+        soundEffectsControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteSoundEffects()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        webShootSound.volume = 0;
+        webSwingSound.volume = 0;
+        punchSound.volume = 0;
+        pumpkinBombSound.volume = 0;
+        gliderSound.volume = 0;
+        poisonSpraySound.volume = 0;
+    }
+}
+
+
+
 
 //disabling all spiderman moves for 2 seconds when clicked to allow animations/audio and goblin retaliation to play out.
 function disableMoves(){
@@ -87,16 +128,14 @@ function beginBattle() {
         stats[x].style.visibility = "visible";
         battleMusic.play();
     }
-    
 }
 
 function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3=pumpkin bomb
     var attackChoice = Math.ceil(Math.random()*3) // 3 for goblin moves, used Math.ceil so it rounds up, we don't want it to round down to 0
-    
     if (attackChoice == 1) {  // GLIDER ATTACK
         gliderSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 7) { 
+        if (hitChance <= 9) { 
             var dmg = Math.round(Math.random() * 10) + 10; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
             if (spiderHP < 0) {  // if hp goes negative, it will bring it to 0
@@ -109,12 +148,15 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
             } 
             setTimeout(gliderAttack, 2000);
         } else {
-            bottomRow.innerHTML += "<br>Spiderman dodged Green Goblin's glider sweep!!"
+            function gliderDodge() {
+                bottomRow.innerHTML += "<br>Spiderman dodged Green Goblin's glider sweep!!"
+            }
+            setTimeout(gliderDodge, 2000);
         }
     } else if (attackChoice == 2) { 
         poisonSpraySound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 4) {
+        if (hitChance <= 6) {
             var dmg = Math.round(Math.random() * 10) + 15; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // 
             if (spiderHP < 0) {  
@@ -122,21 +164,24 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
             }
             function poisonAttack() {
                 bottomRow.innerHTML += "<br>Green Goblin used poison gas, dealing " + dmg + " damage. Spiderman now has " + spiderHP + " HP."
-            var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-            spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+                var spiderHPBarWidth = (spiderHP / 100) * 144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+                spidermanHP.style.width = spiderHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
             }
             setTimeout(poisonAttack, 2000);
         } else {
-            bottomRow.innerHTML += "<br>Spiderman avoided Green Goblin's gas!!"
+            function poisonDodge() {
+                bottomRow.innerHTML += "<br>Spiderman avoided Green Goblin's gas!!"
+            }
+            setTimeout(poisonDodge, 2000);
         }
     } else {
         pumpkinBombSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-        if (hitChance <= 3) { //PUMKPIN BOMB
+        if (hitChance <= 5) { //PUMKPIN BOMB
             
             var dmg = Math.round(Math.random() * 10) + 20; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
-            spiderHP -= dmg;     // 
-            if (spiderHP < 0) {  // 
+            spiderHP -= dmg;     
+            if (spiderHP < 0) {  
                 spiderHP = 0;
             }
             function pumpkinAttack(){
@@ -146,22 +191,26 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
             }
             setTimeout(pumpkinAttack, 2000);
         } else {
-            bottomRow.innerHTML += "<br>Spiderman's spider sense helped him avoid the Pumpkin Bomb!!"
+            function pumpkinDodge(){
+                bottomRow.innerHTML += "<br>Spiderman's spider sense helped him avoid the Pumpkin Bomb!!"
+            }
+            setTimeout(pumpkinDodge, 2000);
+            }
+        }
+        if (spiderHP == 0){ // When the health is 0, the below executes
+            disableMoves();
+            setTimeout(loseOverlay, 2000);  //TESTING
+            //document.getElementById('game-over-text').classList.add('visible');
+            //bottomRow.innerHTML += "<br>Spiderman has fallen! Green Goblin is victorious!!<br><br><button onclick='restartGame()'>Play Again?</button>";
         }
     }
-    if (spiderHP == 0){ // When the health is 0, the below executes
-        disableMoves();
-        setTimeout(loseOverlay, 2000);  //TESTING
-        //document.getElementById('game-over-text').classList.add('visible');
-        //bottomRow.innerHTML += "<br>Spiderman has fallen! Green Goblin is victorious!!<br><br><button onclick='restartGame()'>Play Again?</button>";
-    }
-}
 
 function webShooter() {
     var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
+    bottomRow.innerHTML = "";
     webShootAnimation();
     webShootSound.play(); 
-    if (hitChance <=7){      
+    if (hitChance <=6){      
         var dmg = Math.round(Math.random()*10)+6; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
         goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
@@ -174,42 +223,45 @@ function webShooter() {
         }
         setTimeout(webShooterAttack, 2000);
     } else {
-        bottomRow.innerHTML = "Spiderman's attack missed!"
+        setTimeout(spidermanMissText, 2000);
+        //bottomRow.innerHTML = "Spiderman's attack missed!"
     }
     if (goblinHP == 0){ // When the health is 0, the below executes
         disableMoves();
-        setTimeout(victoryOverlay, 2000);
+        setTimeout(victoryOverlay, 3500);
         //document.getElementById('victory-text').classList.add('visible'); 
         //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
     } else {
         disableMoves();
         setTimeout(enableMoves, 5000);
         setTimeout(goblinAttack, 2700); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
-        
     }
 }
 
 function webSwing () {
     var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
+    bottomRow.innerHTML = "";
     webSwingAnimation();
     webSwingSound.play(); 
-    if (hitChance <=5){      
+    if (hitChance <=4){      
         var dmg = Math.round(Math.random()*10)+13; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
         goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
         }
-        function webSwingAttack() {bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
+        function webSwingAttack() {
+            bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
             var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
             greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
         }
         setTimeout(webSwingAttack, 2000);
     } else {
-        bottomRow.innerHTML = "Spiderman's attack missed!"
+        setTimeout(spidermanMissText, 2000);
+        //bottomRow.innerHTML = "Spiderman's attack missed!"
     }
     if (goblinHP == 0){ // When the health is 0, the below executes
         disableMoves();
-        setTimeout(victoryOverlay, 2000);
+        setTimeout(victoryOverlay, 3000);
         //document.getElementById('victory-text').classList.add('visible'); 
         //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
         //spidermanMoves.style.visibility = "hidden";
@@ -222,6 +274,7 @@ function webSwing () {
 
 function punch () {
     var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
+    bottomRow.innerHTML = "";
     punchSound.play(); 
     punchAnimation();
     if (hitChance <=7){      
@@ -231,17 +284,18 @@ function punch () {
             goblinHP = 0;
         }
         function punchAttack() {
-            bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP."
+            bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. Green Goblin now has " + goblinHP + " HP.";
             var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
             greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
         }
         setTimeout(punchAttack, 2000);
     } else {
-        bottomRow.innerHTML = "Spiderman's attack missed!"
+        setTimeout(spidermanMissText, 2000);
+        //bottomRow.innerHTML = "Spiderman's attack missed!"
     }
     if (goblinHP == 0){ // When the health is 0, the below executes
         disableMoves();
-        setTimeout(victoryOverlay, 2000);
+        setTimeout(victoryOverlay, 3000);
         //document.getElementById('victory-text').classList.add('visible');
         //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
         //spidermanMoves.style.visibility = "hidden"; Removes this as may not need again
@@ -251,6 +305,13 @@ function punch () {
         setTimeout(goblinAttack, 2500); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
     }
 }
+
+function spidermanMissText() {
+    bottomRow.innerHTML = "Spiderman's attack missed!";
+};
+
+
+
 
 //PUNCH ANIMATION!!
 function punchAnimation() {
