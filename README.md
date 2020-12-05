@@ -67,7 +67,16 @@ There were various sites where I obtained music and sound effects.
 4) [mp3quack.live](https://spiderman-theme.mp3quack.live/) - spiderman movie theme
 5) [zapsplat](https://www.zapsplat.com/sound-effect-categories/) - Sound effects for Green Goblin
 
-### Known Bugs
+## Known Bugs
 
-Sound control settings for the Card Matching page.
+- Sound control settings for the Card Matching page.
+- On my mobile device, the bottom section of the Battle page has the marvel background image cut-off.
+
+
+## Tutorials and Credits
+
+The below videos were used as guidelines to create the functional games.
+-   Card Matching Game part 1 - [Youtube - 'Web Dev Simplified'](https://www.youtube.com/watch?v=28VfzEiJgy4&ab_channel=WebDevSimplified)
+-   Card Matching Game part 2 - [Youtube - 'PortEXE'](https://www.youtube.com/watch?v=3uuQ3g92oPQ&ab_channel=PortEXE)
+-   Battle Game - [Youtube - Scott Blenkhorne](https://www.youtube.com/watch?v=sr8bJKSUYwE&ab_channel=ScottBlenkhorne)
 
