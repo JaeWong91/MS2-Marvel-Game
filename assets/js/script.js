@@ -1,11 +1,45 @@
-let audio = {
-    marvelTheme: document.getElementById('marvel-intro')
-}
+
+var marvelTheme = new Audio ('assets/audio/marvel-intro.mp3')
+
 
 window.onload = function() {
-    document.getElementById('marvel-intro').play();
-    audio.themeMusic.loop = true;
-    audio.themeMusic.volume = 0.1;  
+    marvelTheme.play();
+    marvelTheme.loop = true;
+    marvelTheme.volume = 0.2;  
 };
 
+var musicControls = document.getElementById('music-controls');
+var marvelThemeState = "on"; //default background music is on/unmuted
+
+// MODAL //
+
+var modal = document.getElementById("myModal"); // Get the modal
+var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
+var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
+
+audioSetting.onclick = function() {     // When the user clicks music icon, open the modal
+  modal.style.display = "block";
+}
+
+span.onclick = function() {     // When the user clicks on <span> (x), close the modal
+  modal.style.display = "none";
+}
+
+//Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
+var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
+    musicVolumeSlider.addEventListener('input', () => {    // 
+    marvelTheme.volume = musicVolumeSlider.valueAsNumber / 100;
+    });
+
+function muteMusic(){
+    if (marvelThemeState == "off"){
+        marvelThemeState = "on";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        marvelTheme.play();
+    } else {
+        marvelThemeState = "off";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        marvelTheme.pause();
+    }
+}
 

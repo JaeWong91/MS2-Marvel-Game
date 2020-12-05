@@ -15,8 +15,8 @@
 <body>
     
 
-    <!-- THE MODAL ITS NOT WORKING!!!!-->
-        <button id="audioSettings"><i class="fas fa-music"></i></button> <!--AUDIO SETTINGS BUTTON-->
+    <!-- THE MODAL!!!!-->
+        <div id="audioSettings"><i class="fas fa-music"></i></div> <!--AUDIO SETTINGS BUTTON-->
 		<div id="myModal" class="modal">
 		
 			<!-- THE MODAL CONTENT -->
@@ -27,10 +27,10 @@
                 <br>
                 <div class="volume-slider mx-auto">
                     <p class="mb-0">Adjust the music volume here:</p>
-                    <input type="range" value="50" min="0" max="100" step="1" id="music-volume-slider" class="slider" name="music-volume">
+                    <input type="range" value="20" min="0" max="100" step="1" id="music-volume-slider" class="slider" name="music-volume">
                 </div>
                 <div id="music-controls">
-                    <p>Background Music (click to turn on/off): <br><button class="volume-icon" onclick="muteMusic()">ON</button></p>
+                    <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p>
                 </div>
                 <hr>
                 <div class="volume-slider mx-auto">
@@ -38,13 +38,8 @@
                     <input type="range" value="50" min="0" max="100" step="1" id="effects-volume-slider" class="slider" name="effects-volume">
                 </div>
                 <div id="effects-controls">
-                    <p>Sound Effects (click to turn on/off): <br><button class="volume-icon" onclick="muteSoundEffects()">ON</button></p>
+                    <p>Sound Effects (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteSoundEffects()">ON</button></p>
                 </div>
-
-
-                
-
-                
 			</div>
 		</div> 
 

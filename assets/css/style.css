@@ -59,7 +59,7 @@ header {
 /* card menu window */
 #card-menu {
     width: 280px;
-    height: 500px;
+    height: 300px;
     background-color: rgb(7, 19, 34);
     color: white;
     border: solid 1px;
@@ -79,6 +79,7 @@ hr {
 }
 
 
+
 /* Difficulty select window - changed the model to be a normal menu instead, can delete this! */
 .modal-content {
   position: absolute;
@@ -91,6 +92,11 @@ hr {
   z-index: 10;
   animation-name: animatetop;
   animation-duration: 1s;
+}
+
+.main-menu-modal {
+    height: 400px;
+    width: 430px;
 }
 
 .hide {
@@ -487,10 +493,16 @@ hr {
 
 #audioSettings {
     position: absolute;
+    width: 50px;
+    padding-left: 3px;
     font-size: 38px;
+    color: black;
+    background: purple;
+    border: solid 2px white;
+}
+
+#audioSettings:hover {
     color: white;
-    background: black;
-    border: solid 1px white;
 }
 
 .volume-icon {
@@ -500,8 +512,12 @@ hr {
     border: solid 1px white;
 }
 
+.sound-on {
+    background: green;
+}
+
 .volume-icon:hover {
-    color: grey;
+    color: black;
 }
 
 .slider {
@@ -511,13 +527,6 @@ hr {
 
 
 /* Battle Animations */
-
-
-/*TESTING HOVER */
-.spiderman-battle:hover {
-    animation: webSwingAnimation 1s;
-  /*animation-iteration-count: 1; */
-}
 
 .punchAnimation {
   animation: punchAnimation 1s;
@@ -578,4 +587,58 @@ hr {
     80% { transform: translate(2px, 0px) rotate(0deg); }
     85% { transform: translate(10px, -3px) rotate(-3deg); }
     100% { transform: translate(20px, -6px) rotate(-4deg); }
+}
+
+
+/*TESTING GOBLIN ANIMATIONS WITH HOVER */
+.green-goblin:hover {
+    animation: poisonGasAnimation 1s;
+}
+
+.gliderSweepAnimation {
+    animation: gliderSweepAnimation 1.5s;
+}
+
+@keyframes gliderSweepAnimation {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    10% { transform: translate(2px, -5px) rotate(1deg); }
+    20% { transform: translate(3px, -6px) rotate(2deg); }
+    30% { transform: translate(4px, -7px) rotate(3deg); }
+    40% { transform: translate(5px, -8px) rotate(3deg); }
+    50% { transform: translate(6px, -15px) rotate(4deg); }
+    75% { transform: translate(2px, -5px) rotate(1deg); }
+    80% { transform: translate(-2px, 0px) rotate(0deg); }
+    85% { transform: translate(-10px, -3px) rotate(-3deg); }
+    100% { transform: translate(-20px, -6px) rotate(-4deg); }
+}
+
+.pumpkinBombAnimation {
+    animation: pumpkinBombAnimation 1s;
+}
+
+@keyframes pumpkinBombAnimation {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    20% { transform: translate(-6px, -5px) rotate(-5deg); }
+    60% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.poisonGasAnimation {
+    animation: poisonGasAnimation 1s;
+}
+
+@keyframes poisonGasAnimation {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    10% { transform: translate(2px, 0px) rotate(4deg); }
+    20% { transform: translate(-4px, 0px) rotate(-2deg); }
+    30% { transform: translate(-4px, 0px) rotate(2deg); }
+    40% { transform: translate(-4px, 0px) rotate(-1deg); }
+    50% { transform: translate(-4px, 0px) rotate(1deg); }
+    55% { transform: translate(-4px, 0px) rotate(-1deg); }
+    60% { transform: translate(-4px, 0px) rotate(1deg); }
+    65% { transform: translate(-4px, 0px) rotate(-1deg); }
+    70% { transform: translate(0px, 0px) rotate(0deg); }
+    75% { transform: translate(-4px, 0px) rotate(1deg); }
+    80% { transform: translate(-4px, 0px) rotate(-1deg); }
+    85% { transform: translate(0px, 0px) rotate(0deg); }
+    100% { transform: translate(-4px, 0px) rotate(1deg); }
 }
