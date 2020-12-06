@@ -79,8 +79,9 @@ hr {
 
 .modal-content {
   position: absolute;
-  width: 550px;
-  height: 700px;
+  width: 400px;
+  height: 550px;
+  font-size: 22px;
   background-color: rgb(7, 19, 34);
   color: white;
   border: solid 1px;
@@ -92,7 +93,7 @@ hr {
 
 .main-menu-modal {
     height: 400px;
-    width: 430px;
+    width: 400px;
 }
 
 .hide {
@@ -406,6 +407,7 @@ hr {
 /*------ Battle Page CSS -------*/
 
 .battle-container {
+    height: 600px;
     background-color: rgb(56, 21, 21);
     border: solid 1px black;
     opacity: 0.95;
@@ -427,10 +429,11 @@ hr {
 }
 
 #bottomRow {
-    font-size: 22px;
+    font-size: 18px;
     padding: 20px;
     color: white;
     text-align: center;
+    max-width: 450px;
 }
 
 .stats {
@@ -478,7 +481,7 @@ hr {
 }
 
 .audio-control {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 #audioSettings {
@@ -632,5 +635,11 @@ hr {
 @media (max-width: 850px) {
     #greenGoblinStats {
         height: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .battle-container {
+        height:1100px;
     }
 }

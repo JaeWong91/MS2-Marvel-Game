@@ -154,47 +154,14 @@ class MarvelCards {                  // creating a new class
     }
 }
 
-
-// card-game.html - making the click to start functionable
-
-
-/* function hideMediumHard(); // TESTING THE DIFFICULTY FUNCTION TO WORK
-    var mediumCards = Array.from(document.getElementsByClassName(medium));
-    var hardCards = Array.from(document.getElementsByClassName(hard));
-    this.mediumCards.classList.add('hide');
-    this.hardCards.classList.add('hide');
-    game.startGame(); */
-
-
-
 function ready() {    
     let cardMenu = document.getElementById('card-menu');        //added this as test
-   // let playButton = document.getElementsByClassName('card-play-button');
     let btns = Array.from(document.getElementsByClassName('card-play-button'));  //working button function
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    //let difficultyLevel = ""   // TESTING THIS MYSELF
-    //let easyDifficulty = Array.from(document.getElementsByClassName('easy'));
-    //let mediumDifficulty = Array.from(document.getElementsByClassName('medium'));
-    //let hardDifficulty = Array.from(document.getElementsByClassName('hard'));
     let game = new MarvelCards(90, cards);
 
-    
-
-    /*easyDifficulty.onClick = function() {             //This function not working
-        mediumDifficulty.classList.add('hide');
-        hardDifficulty.classList.add('hide');
-    }; */
-
-     //   playButton.addEventListener('click', () => {
-     //       cardMenu.classList.add('hide');
-    //        cardGame.classList.remove('hide');
-    //        game.startGame();
-    //    }); 
-     
-
-    // console.log(hardDifficulty);
     
 
     btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
