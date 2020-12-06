@@ -38,8 +38,6 @@ class AudioController {
     }
 }
 
-
-
 class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -140,9 +138,9 @@ class MarvelCards {                  // creating a new class
         document.getElementById('victory-text').classList.add('visible');
     }
 
-    //SHUFFLE ALGORITHM  --- Fisher Yates algorithm
+    //SHUFFLE ALGORITHM  --- Fisher Yates algorithm -- taken from youtube
     shuffleCards() {
-        for(let i = this.cardsArray.length - 1; i > 0; i--) {                                 
+        for(let i = this.cardsArray.length - 1; i > 0; i--) {                                       
             let randIndex = Math.floor(Math.random() * (i+1));
             this.cardsArray[randIndex].style.order = i;
             this.cardsArray[i].style.order = randIndex;
@@ -185,9 +183,6 @@ function ready() {
     });
 }
 
-
-//REMOVING THIS TO TRY AND GET THE MODAL TO WORK
-
 if(document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready()); // once everything in html file is loaded, it is going to call the function
 } else {
@@ -223,10 +218,10 @@ function muteMusic(){
     if (bgMusicState == "off"){
         bgMusicState = "on";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
-        MarvelCards.AudioController.this.bgMusic.play();
+        MarvelCards.AudioController.bgMusic.play();
     } else {
         bgMusicState = "off";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
-        MarvelCards.AudioController.this.bgMusic.pause();
+        MarvelCards.AudioController.bgMusic.pause();
     }
 }

@@ -17,7 +17,7 @@ header {
   animation-duration: 2s;
 }
 
-.marvel-background:after {
+.marvel-background:after {      /* This code credited to - https://stackoverflow.com/questions/23254346/how-can-i-change-background-image-opacity-without-changing-on-div-content*/
   content: "";
   background: url("../images/marvel-background.jpg") no-repeat center center;
   position: absolute;
@@ -28,7 +28,6 @@ header {
   height: 100%;
   z-index: -1;
   opacity: 0.4;
-  /* This code credited to - https://stackoverflow.com/questions/23254346/how-can-i-change-background-image-opacity-without-changing-on-div-content*/
 }
 
 .card-game-title {
@@ -110,7 +109,6 @@ hr {
   text-shadow: none;
   flex: none;
   font-size: 30px;
-
 }
 
 .close:hover,
@@ -141,14 +139,12 @@ hr {
   }
 }
 
-.center-container {
-  /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
+.center-container {     /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   position: relative;
   perspective: 500px;  /* 3d perspective, will tell us that the element is 500px away from the game container */
 }
 
-.absolute-center {
-  /* test for centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
+.absolute-center {      /* test for centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -157,7 +153,7 @@ hr {
   bottom: 0;
   right: 0;
 }
-  /* this is the exit button on the card-game page */
+  
 .exit-button {
     position: absolute;
     font-size: 22px;
@@ -185,7 +181,7 @@ hr {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(5, auto);      /* 4 columns that will automatically autosize themselves */
+    grid-template-columns: repeat(5, auto);      /* 5 columns that will automatically autosize themselves */
     grid-gap: 10px;
 }
 
@@ -257,6 +253,7 @@ hr {
     left: 0;
     right: 0;
     bottom: 0;
+    text-align: center;
     justify-content: center;
     align-items: center;
     z-index: 100;
@@ -285,7 +282,7 @@ hr {
     }
     to {
         background-color: rgb(0, 0, 0, 0.95);
-        font-size: 80px;
+        font-size: 50px;
     }
 }
 
