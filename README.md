@@ -6,6 +6,8 @@ There are two games that users can play. They are:
 1) A turn based battle game. Play as Spiderman and use his abilities to defeat his nemesis, Green Goblin. 
 2) Card pair matching game. There are a total of 12 Marvel characters. Find and pair up the heroes within the time limit.
 
+The Live Website can be found [here](https://jaewong91.github.io/MS2-Marvel-Game/)
+
 # User Experience (UX)
 
 ## User Stories
