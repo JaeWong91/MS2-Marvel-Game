@@ -20,7 +20,6 @@ class AudioController {
         if (bgMusicState == "on") { // To determing to play bg music
             this.bgMusic.play();
         }
-        
     }
     stopMusic() {
         this.bgMusic.pause();
@@ -32,8 +31,6 @@ class AudioController {
     match() {
         this.matchSound.play();
     }
-
-    //testing modal function og stopSound function
 
     stopSound() {
         this.audioController.stopMusic();
@@ -47,10 +44,7 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
-
-    
 }
-
 
 class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
@@ -188,7 +182,7 @@ let btns = Array.from(document.getElementsByClassName('card-play-button'));  //w
 let cardGame = document.getElementById('card-game');                             //added this as test
 let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 let cards = Array.from(document.getElementsByClassName('card'));
-let game = new MarvelCards(5, cards);
+let game = new MarvelCards(90, cards);
 
 
 function ready() {    
