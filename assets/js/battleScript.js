@@ -68,6 +68,8 @@ function muteMusic(){
 //volume control for sound effects 
 var soundEffectsSlider = document.querySelector('#effects-volume-slider'); // get slider
     soundEffectsSlider.addEventListener('input', () => {    // 
+    soundEffectsState = "on";
+    soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>" 
     webShootSound.volume = soundEffectsSlider.valueAsNumber / 100;
     webSwingSound.volume = soundEffectsSlider.valueAsNumber / 100;
     punchSound.volume = soundEffectsSlider.valueAsNumber / 100;
