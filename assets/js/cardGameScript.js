@@ -188,8 +188,8 @@ let btns = Array.from(document.getElementsByClassName('card-play-button'));  //w
 let cardGame = document.getElementById('card-game');                             //added this as test
 let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 let cards = Array.from(document.getElementsByClassName('card'));
-let game = new MarvelCards(90, cards);
-let bgMusicState = "on";
+let game = new MarvelCards(5, cards);
+
 
 function ready() {    
     /* let cardMenu = document.getElementById('card-menu');        //added this as test
@@ -244,7 +244,7 @@ span.onclick = function() {     // When the user clicks on <span> (x), close the
 
 
 var musicControls = document.getElementById('music-controls');
-//var bgMusicState = "on"; //default background music is on/unmuted
+var bgMusicState = "on"; //default background music is on/unmuted
 var soundEffectsControls = document.getElementById('effects-controls');
 var soundEffectsState = "on";
 
@@ -257,9 +257,7 @@ var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get s
 
 
 function muteMusic(){
-    console.log("Im in music")
     if (bgMusicState == "off"){
-        console.log("bgMusicState is off")
         bgMusicState = "on";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
         game.audioController.startMusic();
@@ -267,6 +265,34 @@ function muteMusic(){
         bgMusicState = "off";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
         game.audioController.stopMusic();
+    }
+} 
+
+
+var soundEffectsSlider = document.querySelector('#effects-volume-slider');
+    soundEffectsSlider.addEventListener('input', () => {  
+    game.audioController.flipSound.volume = (soundEffectsSlider.valueAsNumber / 100) * 0.5;
+    game.audioController.matchSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    game.audioController.victorySound.volume = soundEffectsSlider.valueAsNumber / 100;
+    game.audioController.gameOverSound.volume = soundEffectsSlider.valueAsNumber / 100;
+    });
+
+
+function muteSoundEffects(){
+    if (soundEffectsState == "off"){
+        soundEffectsState = "on";
+        soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        game.audioController.flipSound.volume = 0.5;
+        game.audioController.matchSound.volume = 1;
+        game.audioController.victorySound.volume = 1;
+        game.audioController.gameOverSound.volume = 1;
+    } else {
+        soundEffectsState = "off";
+        soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteSoundEffects()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        game.audioController.flipSound.volume = 0;
+        game.audioController.matchSound.volume = 0;
+        game.audioController.victorySound.volume = 0;
+        game.audioController.gameOverSound.volume = 0;
     }
 } 
 

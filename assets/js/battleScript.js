@@ -98,9 +98,6 @@ function muteSoundEffects(){
     }
 }
 
-
-
-
 //disabling all spiderman in certain scenarios.
 function disableMoves(){
     for (var x=0; x < spidermanMoves.length; x++) {      // loop to change all stats elements (there are 2 of them, 1 for spiderman and 1 for green goblin) from hidden to visible
@@ -114,7 +111,6 @@ function enableMoves() {
         spidermanMoves[y].disabled = false;
     }
 }
-
 
 //Battle functions
 
@@ -305,7 +301,6 @@ function webSwing () {
         setTimeout(goblinAttack, 3000); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
     }
 }
-
 
 
 function spidermanMissText() {
