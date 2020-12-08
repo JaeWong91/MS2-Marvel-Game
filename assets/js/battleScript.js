@@ -133,7 +133,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         gliderSound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 7) { 
-            var dmg = Math.round(Math.random() * 10) + 10; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+            var dmg = Math.round(Math.random() * 10) + 5; //this will give us a random number in between 5 and 15. "Math.round(Math.random()*10)" will give us a number between 0 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
             if (spiderHP < 0) {  // if hp goes negative, it will bring it to 0
                 spiderHP = 0;
@@ -155,7 +155,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         poisonSpraySound.play();
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 5) {
-            var dmg = Math.round(Math.random() * 10) + 15; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+            var dmg = Math.round(Math.random() * 10) + 10; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     // 
             if (spiderHP < 0) {  
                 spiderHP = 0;
@@ -178,7 +178,7 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         var hitChance = Math.round(Math.random() * 10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
         if (hitChance <= 4) { //PUMKPIN BOMB
             
-            var dmg = Math.round(Math.random() * 10) + 20; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+            var dmg = Math.round(Math.random() * 10) + 15; //this will give us a random number in between 15 and 25. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
             spiderHP -= dmg;     
             if (spiderHP < 0) {  
                 spiderHP = 0;
@@ -204,13 +204,48 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
         }
     }
 
+function punch () {
+    var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
+    bottomRow.innerHTML = "";
+    punchSound.play(); 
+    punchAnimation();
+    if (hitChance <=7){      
+        var dmg = Math.round(Math.random()*10)+5; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+        goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
+        if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
+            goblinHP = 0;
+        }
+        function punchAttack() {
+            bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. <br>Green Goblin now has " + goblinHP + " HP.";
+            var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
+            greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
+        }
+        setTimeout(punchAttack, 2000);
+    } else {
+        setTimeout(spidermanMissText, 2000);
+        //bottomRow.innerHTML = "Spiderman's attack missed!"
+    }
+    if (goblinHP == 0){ // When the health is 0, the below executes
+        disableMoves();
+        setTimeout(victoryOverlay, 3000);
+        //document.getElementById('victory-text').classList.add('visible');
+        //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
+        //spidermanMoves.style.visibility = "hidden"; Removes this as may not need again
+    } else {
+        disableMoves();
+        setTimeout(enableMoves, 5000);
+        setTimeout(goblinAttack, 2500); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
+    }
+}
+
+
 function webShooter() {
     var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
     bottomRow.innerHTML = "";
     webShootAnimation();
     webShootSound.play(); 
-    if (hitChance <=6){      
-        var dmg = Math.round(Math.random()*10)+6; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+    if (hitChance <=5){      
+        var dmg = Math.round(Math.random()*10)+10; //this will give us a random number in between 15 and 25. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
         goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
@@ -243,7 +278,7 @@ function webSwing () {
     webSwingAnimation();
     webSwingSound.play(); 
     if (hitChance <=4){      
-        var dmg = Math.round(Math.random()*10)+13; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
+        var dmg = Math.round(Math.random()*10)+15; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
         goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
         if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
             goblinHP = 0;
@@ -271,39 +306,7 @@ function webSwing () {
     }
 }
 
-function punch () {
-    var hitChance = Math.round(Math.random()*10); // "Match.random()*10" will give us a random number between 0 and 10, then "Math.round" round down or up to nearest whole number.
-    bottomRow.innerHTML = "";
-    punchSound.play(); 
-    punchAnimation();
-    if (hitChance <=7){      
-        var dmg = Math.round(Math.random()*10)+8; //this will give us a random number in between 10 and 20. "Math.round(Math.random()*10)" will give us a number between 1 and 10. We add 10 so that the hit amount will be between 10 and 20!
-        goblinHP -= dmg;     // -= means that goblinHP less dmg value, and now this will become the new value for goblinHP
-        if(goblinHP < 0){  // if hp goes negative, it will bring it to 0
-            goblinHP = 0;
-        }
-        function punchAttack() {
-            bottomRow.innerHTML = "You hit Green Goblin with a strong punch, doing " + dmg + " damage. <br>Green Goblin now has " + goblinHP + " HP.";
-            var goblinHPBarWidth = (goblinHP/100)*144; // in css, the width for hp bar is 144px - this will calculate how many pixels to deduct from the hp bar width
-            greenGoblinHP.style.width =  goblinHPBarWidth + "px"; // this is altering the width style in css for the hp bar width!! 
-        }
-        setTimeout(punchAttack, 2000);
-    } else {
-        setTimeout(spidermanMissText, 2000);
-        //bottomRow.innerHTML = "Spiderman's attack missed!"
-    }
-    if (goblinHP == 0){ // When the health is 0, the below executes
-        disableMoves();
-        setTimeout(victoryOverlay, 3000);
-        //document.getElementById('victory-text').classList.add('visible');
-        //bottomRow.innerHTML += "<br>You have defeated Green Goblin!!<br><br><button onclick='restartGame()'>Play Again?</button>";
-        //spidermanMoves.style.visibility = "hidden"; Removes this as may not need again
-    } else {
-        disableMoves();
-        setTimeout(enableMoves, 5000);
-        setTimeout(goblinAttack, 2500); // while Green Goblin is alive, each time user clicks a spiderman move, green goblin will also attack.
-    }
-}
+
 
 function spidermanMissText() {
     bottomRow.innerHTML = "Spiderman's attack missed!";

@@ -32,7 +32,7 @@
                     <input type="range" value="20" min="0" max="100" step="1" id="music-volume-slider" class="slider" name="music-volume">
                 </div>
                 <div id="music-controls">
-                    <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p>
+                    <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p> <!--removed onclick="muteMusic()"-->
                 </div>
                 <hr>
                 <div class="volume-slider mx-auto">
@@ -50,7 +50,7 @@
         </header>
 
         <div class="center-container absolute-center text-center mx-auto my-auto p-3" id="card-menu">
-                <p>How to play: <br>Find and pair-up the heroes hidden behind the cards. There are a total of 12 different heroes.</p>
+                <p><h5>How to play:</h5><br>Find and pair-up the heroes hidden behind the cards. There are a total of 12 different heroes.</p>
                 <p>You have 90 seconds to find them all!</p>
 				<button type="button" class="card-play-button btn btn-success w-50 center mx-auto mt-4">Play</button>
 		</div>    
@@ -86,7 +86,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front0 card-face" >    <!-- Testing this, added "spiderman" as a class to pull image from css-->
+                        <div class="card-front card-face" >    <!-- Testing this, added "spiderman" as a class to pull image from css-->
                             <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">     <!--removing this to try and get the image to appear through css class-->
                         </div>
                     </div>
@@ -94,7 +94,7 @@
 						<div class="card-back card-face" >
 							<img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
 					    </div>
-						<div class="card-front card-front1 card-face">    <!-- Testing this, added "spiderman" as a class to pull image from css-->
+						<div class="card-front card-face">    <!-- Testing this, added "spiderman" as a class to pull image from css-->
                             <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">   <!--removing this to try and get the image to appear through css class-->
 					    </div>
 					</div>
@@ -102,7 +102,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front2 card-face "> 
+                        <div class="card-front card-face "> 
                             <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front3 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front4 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/thor.png" alt="thor">
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front5 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/thor.png" alt="thor">
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front6 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front7 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front8 card-face">
+                        <div class="card-front card-face">
                             <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
                         </div>
                     </div>
@@ -158,7 +158,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front9 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front10 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/hulk.png" alt="hulk">
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front11 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/hulk.png" alt="hulk">
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front12 card-face">
+                        <div class="card-front card-face">
                             <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front13 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front14 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front15 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front16 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/rogue.png" alt="rogue">
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front17 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/rogue.png" alt="rogue">
                         </div>
                     </div>
@@ -230,7 +230,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front18 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/jean.png" alt="jean grey">
                         </div>
                     </div>
@@ -238,7 +238,7 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-front19 card-face"> 
+                        <div class="card-front card-face"> 
                             <img class="card-value" src="assets/images/jean.png" alt="jean grey">
                         </div>
                     </div>
@@ -247,7 +247,7 @@
         </div>
 	</section>
 
-    <script src="assets/js/gameScript.js" type="text/javascript">></script>   <!-- USING TEST SCRIPT TO TRY AND IMPLEMENT CLASS NAMED CARD PICTURES FOR DIFFICULTY SETTING AND SHUFFLE-->
+    <script src="assets/js/cardGameScript.js" type="text/javascript">></script>   <!-- USING TEST SCRIPT TO TRY AND IMPLEMENT CLASS NAMED CARD PICTURES FOR DIFFICULTY SETTING AND SHUFFLE-->
 
 </body>
 

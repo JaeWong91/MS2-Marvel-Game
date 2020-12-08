@@ -1,3 +1,4 @@
+
 // --- Music and Sounds ---//
 class AudioController {
     constructor() {
@@ -6,9 +7,9 @@ class AudioController {
         this.matchSound = new Audio('assets/audio/match.wav');
         this.victorySound = new Audio('assets/audio/victory.wav');
         this.gameOverSound = new Audio('assets/audio/fail.wav');
+        //this.bgMusicState = "on"; // added this to test audio controls
         this.bgMusic.volume = 0.2; 
         this.bgMusic.loop = true;
-
         this.flipSound.volume = 0.5;
     }
     startMusic() {
@@ -16,7 +17,10 @@ class AudioController {
         this.victorySound.currentTime = 0;      //ADDED THIS MYSELF
         this.gameOverSound.pause();     //ADDED THIS MYSELF
         this.gameOverSound.currentTime = 0;    //ADDED THIS MYSELF
-        this.bgMusic.play();
+        if (bgMusicState == "on") { // To determing to play bg music
+            this.bgMusic.play();
+        }
+        
     }
     stopMusic() {
         this.bgMusic.pause();
@@ -28,6 +32,13 @@ class AudioController {
     match() {
         this.matchSound.play();
     }
+
+    //testing modal function og stopSound function
+
+    stopSound() {
+        this.audioController.stopMusic();
+    }
+
     victory() {                     // on victory, it stops the background music then plays this
         this.stopMusic();
         this.victorySound.play();
@@ -36,7 +47,10 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
+
+    
 }
+
 
 class MarvelCards {                  // creating a new class
     constructor(totalTime, cards) {
@@ -150,18 +164,42 @@ class MarvelCards {                  // creating a new class
     canFlipCard(card) {                                                                         // here if the below statement is true, then the player can flip the card
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck // This creates a boolean - here is if statement so if (! means is not) all 3 statements are all FALSE then the statement will be true.
     }
+
+    //muteMusic(){              CANNOT GET THIS TO WORK
+    //    let musicControls = document.getElementById('musicControls');
+
+    //    musicControls.addEventListener('click', () => {
+    //    if (bgMusicState == "off") {
+     //       console.log("bgMusicState is off")
+     //       bgMusicState = "on";
+     //       musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+     //       this.audioController.bgMusic.play();
+     //   } if (bgMusicState == "on") {
+     //       bgMusicState = "off";
+     //       musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+     //       this.audioController.bgMusic.pause();
+     //   }
+      //  })
+    
 }
 
+let cardMenu = document.getElementById('card-menu');        //added this as test
+let btns = Array.from(document.getElementsByClassName('card-play-button'));  //working button function
+let cardGame = document.getElementById('card-game');                             //added this as test
+let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+let cards = Array.from(document.getElementsByClassName('card'));
+let game = new MarvelCards(90, cards);
+let bgMusicState = "on";
+
 function ready() {    
-    let cardMenu = document.getElementById('card-menu');        //added this as test
+    /* let cardMenu = document.getElementById('card-menu');        //added this as test
     let btns = Array.from(document.getElementsByClassName('card-play-button'));  //working button function
     let cardGame = document.getElementById('card-game');                             //added this as test
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MarvelCards(90, cards);
+    let game = new MarvelCards(90, cards);  */
 
     
-
     btns.forEach(btn => {                     // added this as test - Trying to get the modal to close when a button is clicked!!!!
         btn.addEventListener('click', () => {
            cardMenu.classList.add('hide');
@@ -181,6 +219,8 @@ function ready() {
             game.flipCard(card);                //here when you click on a card, it will be game.flipCard
         });
     });
+
+
 }
 
 if(document.readyState === 'loading') {
@@ -204,24 +244,30 @@ span.onclick = function() {     // When the user clicks on <span> (x), close the
 
 
 var musicControls = document.getElementById('music-controls');
-var bgMusicState = "on"; //default background music is on/unmuted
+//var bgMusicState = "on"; //default background music is on/unmuted
 var soundEffectsControls = document.getElementById('effects-controls');
 var soundEffectsState = "on";
 
 //Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
 var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
     musicVolumeSlider.addEventListener('input', () => {    // 
-    battleMusic.volume = musicVolumeSlider.valueAsNumber / 100;
+    game.audioController.bgMusic.volume = musicVolumeSlider.valueAsNumber / 100;
     });
 
+
+
 function muteMusic(){
+    console.log("Im in music")
     if (bgMusicState == "off"){
+        console.log("bgMusicState is off")
         bgMusicState = "on";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
-        MarvelCards.AudioController.bgMusic.play();
+        game.audioController.startMusic();
     } else {
         bgMusicState = "off";
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
-        MarvelCards.AudioController.bgMusic.pause();
+        game.audioController.stopMusic();
     }
-}
+} 
+
+

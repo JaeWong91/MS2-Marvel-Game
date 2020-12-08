@@ -57,7 +57,7 @@ header {
 /* card page menu  */
 #card-menu {
     width: 280px;
-    height: 300px;
+    height: 330px;
     background-color: rgb(7, 19, 34);
     color: white;
     border: solid 1px;
@@ -73,7 +73,7 @@ header {
 
 hr {
   border: 1px solid white;
-  width: 400px;
+  width: 350px;
 }
 
 .modal-content {
