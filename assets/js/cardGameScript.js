@@ -112,7 +112,7 @@ class MarvelCards {
             this.victory();
     }
 
-    cardMisMatch(card1, card2) {                // here whenever a card is not matched, it will remove the "visible" class and flip the card back facing down
+    cardMisMatch(card1, card2) {    // here whenever a card is not matched, it will remove the "visible" class and flip the card back facing down
         this.busy = true;
         setTimeout(() => {
             card1.classList.remove('visible');          
