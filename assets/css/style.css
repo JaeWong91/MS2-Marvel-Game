@@ -80,7 +80,7 @@ hr {
   position: absolute;
   width: 400px;
   height: 550px;
-  font-size: 22px;
+  font-size: 20px;
   background-color: rgb(7, 19, 34);
   color: white;
   border: solid 1px;
@@ -139,12 +139,12 @@ hr {
   }
 }
 
-.center-container {     /* test for centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
+.center-container {     /* centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   position: relative;
   perspective: 500px;  /* 3d perspective, will tell us that the element is 500px away from the game container */
 }
 
-.absolute-center {      /* test for centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
+.absolute-center {    /* centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -168,9 +168,7 @@ hr {
   color: white;
 }
 
-
 /* Card game page and contents */
-
 .card-game-container {
     background-color: rgba(31, 8, 8, 0.98);
     border: solid 1px white;
@@ -185,7 +183,7 @@ hr {
     grid-gap: 10px;
 }
 
-.card-game-info-container {                     /* non-bootstrap grid system to make the card shuffle functional */
+.card-game-info-container {               /* non-bootstrap grid system to make the card shuffle functional */
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -229,7 +227,7 @@ hr {
 }
 
 .card-back {
-    background-color: transparent;     /* TESTING TO SEE IF THIS WILL*/  
+    background-color: transparent;      
     transform: rotateY(0);
     
 }
@@ -324,9 +322,7 @@ hr {
     transition: transform 1s;
 }
 
-
-
-/* CARD PICTURES NOT WORKING AS CLASSES!!!! */
+/* Card Pictures */
 .black-panther {
     background-image: url('../images/black-panther.png');
     height: 100%;
@@ -472,11 +468,13 @@ hr {
 }
 
 .hpBar {
-    width: 144px;               /*this is to house the green hp bar inside the hpBorder, border is 3px so 2*3 = 6px */
+    width: 144px;      /*this is to house the green hp bar inside the hpBorder, border is 3px so 2*3 = 6px */
     height: 24px;
     background-color: green;
 }
 
+
+/* Audio Modal */
 .audio-control {
     font-size: 22px;
 }
@@ -491,7 +489,8 @@ hr {
     border: solid 2px white;
 }
 
-#audioSettings:hover {
+#audioSettings:hover,
+#battleGameInformation:hover {
     color: white;
 }
 
@@ -512,7 +511,24 @@ hr {
 
 .slider {
     width: 250px;
-    
+}
+
+/* Battle Game modal */
+
+#battleGameInformation { /* Information Icon */
+    position: absolute;
+    margin-left: 52px;
+    width: 50px;
+    padding-left: 3px;
+    font-size: 38px;
+    text-align: center;
+    color: black;
+    background: rgba(2, 135, 2, 0.762);
+    border: solid 2px white;
+}
+
+.battle-information {
+    font-size: 20px;
 }
 
 /* Battle Animations */
@@ -613,8 +629,6 @@ hr {
     85% { transform: translate(0px, 0px) rotate(0deg); }
     100% { transform: translate(-4px, 0px) rotate(1deg); }
 }
-
-
 
 /* Media Queries for page size responsiveness*/
 

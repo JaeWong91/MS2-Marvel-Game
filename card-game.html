@@ -8,16 +8,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     
-
-
     <title>Marvel Card Matching</title>
 </head>
 
 <body>
 	<section class="marvel-background">
 		
-
-        <!-- THE MODAL!!!!-->
+        <!-- THE MODAL-->
         <div id="audioSettings"><i class="fas fa-music"></i></div> <!--AUDIO SETTINGS BUTTON-->
 		<div id="myModal" class="modal">
 		
@@ -55,6 +52,7 @@
 				<button type="button" class="card-play-button btn btn-success w-50 center mx-auto mt-4">Play</button>
 		</div>    
 
+        <!--Overlays on gameover or victory-->
         <div id="game-over-text" class="overlay-text">
             GAME OVER
             <img class="deadpool-fail overlay-picture" src="assets/images/deadpool-fail.png" alt="sad deadpool">
@@ -67,9 +65,7 @@
         </div>
         <a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>
         
-
-<!-- WHOLE CARD GAME-->
-
+        <!--Whole Card Game-->
         <div class="card-game-container container hide mt-5 py-3 hide" id="card-game">   <!-- added 'hide' class to try and hide the card game before a difficulty is selected-->
 			<div class="card-game-info-container row">
 				<div class="text-center col-sm-12 col-md-6 pl-md-5 card-game-info">
@@ -86,16 +82,16 @@
                         <div class="card-back card-face">
                             <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                         </div>
-                        <div class="card-front card-face" >    <!-- Testing this, added "spiderman" as a class to pull image from css-->
-                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">     <!--removing this to try and get the image to appear through css class-->
+                        <div class="card-front card-face" >
+                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
                         </div>
                     </div>
 					<div class="card easy medium hard mx-2">
 						<div class="card-back card-face" >
 							<img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
 					    </div>
-						<div class="card-front card-face">    <!-- Testing this, added "spiderman" as a class to pull image from css-->
-                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">   <!--removing this to try and get the image to appear through css class-->
+						<div class="card-front card-face">
+                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
 					    </div>
 					</div>
 				    <div class="card easy medium hard mx-2">
@@ -246,9 +242,7 @@
             </div>
         </div>
 	</section>
-
-    <script src="assets/js/cardGameScript.js" type="text/javascript">></script>   <!-- USING TEST SCRIPT TO TRY AND IMPLEMENT CLASS NAMED CARD PICTURES FOR DIFFICULTY SETTING AND SHUFFLE-->
-
+    <script src="assets/js/cardGameScript.js" type="text/javascript"></script> 
 </body>
 
 </html>

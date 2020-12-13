@@ -12,15 +12,18 @@ The Live Website can be found [here](https://jaewong91.github.io/MS2-Marvel-Game
 
 ## User Stories
 
-As a visitor and a user of the website, I would like to:
+As a visitor and a user of the website, when playing the battle game I would like to:
 
 * Play and experience a battle/fighting game using a Marvel Hero. 
 * Fight a difficult battle against a Marvel villain.
 * See how effective the abilities I select in defeating the enemy.
-* View the abilities used by the opponent.
-* Play a card matching game to challenge my memory.
+* Understand the abilities used by the opponent and how much it affects my character.
 * Adjust the music and sound settings at any time.
+
+As a visitor and a user of the website, when playing the card matching game I would like to:
+* Play a card matching game to challenge my memory.
 * Understand the games that I play with clear instructions.
+* Adjust the music and sound settings at any time.
 
 ## Design
 
@@ -42,6 +45,16 @@ As a visitor and a user of the website, I would like to:
     
     - [Desktop]()
     - [Mobile Phone]()
+
+
+### Game Functionality
+
+- Battle Game
+    - The game starts by asking the player to use one of the three abilities available to Spiderman.
+    - Each ability has a chance to hit or miss the enemy, Green Goblin.
+    - Each time an ability lands or misses, the text will advise the player of this.
+    - If an attack successfully hits Green Goblin, the player is updated of how much damage dealt and current Health.
+    
 
 ### Images 
 
@@ -71,9 +84,7 @@ There were various sites where I obtained music and sound effects.
 
 ## Known Bugs
 
-- Sound control settings for the Card Matching page.
 - On my mobile device, the bottom section of the Battle page has the marvel background image cut-off.
-
 
 ## Tutorials and Credits
 

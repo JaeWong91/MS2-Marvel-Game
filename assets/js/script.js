@@ -1,6 +1,5 @@
-
+//Home page Modal and Music functions
 var marvelTheme = new Audio ('assets/audio/marvel-intro.mp3')
-
 
 window.onload = function() {
     marvelTheme.play();
@@ -12,16 +11,15 @@ var musicControls = document.getElementById('music-controls');
 var marvelThemeState = "on"; //default background music is on/unmuted
 
 // MODAL //
+var modal = document.getElementById("myModal"); 
+var audioSetting = document.getElementById("audioSettings");  
+var span = document.getElementsByClassName("close")[0];  
 
-var modal = document.getElementById("myModal"); // Get the modal
-var audioSetting = document.getElementById("audioSettings");  // Get the button that opens the modal
-var span = document.getElementsByClassName("close")[0];  // Get the <span> element that closes the modal
-
-audioSetting.onclick = function() {     // When the user clicks music icon, open the modal
+audioSetting.onclick = function() {
   modal.style.display = "block";
 }
 
-span.onclick = function() {     // When the user clicks on <span> (x), close the modal
+span.onclick = function() {   
   modal.style.display = "none";
 }
 
@@ -34,11 +32,11 @@ var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get s
 function muteMusic(){
     if (marvelThemeState == "off"){
         marvelThemeState = "on";
-        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-up\"></i></button>";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      
         marvelTheme.play();
     } else {
         marvelThemeState = "off";
-        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           //"<button class=\"volume-icon\" onclick=\"mute()\"><i class=\"fas fa-volume-mute\"></i></button>";
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                          
         marvelTheme.pause();
     }
 }
