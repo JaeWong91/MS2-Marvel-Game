@@ -229,7 +229,6 @@ hr {
 .card-back {
     background-color: transparent;      
     transform: rotateY(0);
-    
 }
 
 .card.visible .card-back {
@@ -471,6 +470,14 @@ hr {
     width: 144px;      /*this is to house the green hp bar inside the hpBorder, border is 3px so 2*3 = 6px */
     height: 24px;
     background-color: green;
+}
+
+.spiderman-moves {
+    color: rgba(255, 0, 0, 0.83);
+}
+
+.goblin-moves {
+    color: green;
 }
 
 

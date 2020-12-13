@@ -13,59 +13,58 @@
 
 <body>
     <!-- The Modal for Audio Settings-->
-        <div id="audioSettings"><i class="fas fa-music"></i></div> <!--Audio settings button-->
-		<div id="myModal" class="modal">
-		
-			<!-- Modal Content - Audio settings-->
-			<div class="audio-control modal-content center-container absolute-center text-center mx-auto">
-				<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-				<h3 class="my-2">Audio Settings</h3>
-                <hr>
-                <br>
-                <div class="volume-slider mx-auto">
-                    <p class="mb-0">Adjust the music volume here:</p>
-                    <input type="range" value="20" min="0" max="100" step="1" id="music-volume-slider" class="slider" name="music-volume">
-                </div>
-                <div id="music-controls">
-                    <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p>
-                </div>
-                <hr>
-                <div class="volume-slider mx-auto">
-                    <p class="mb-0">Adjust the sound effects volume here:</p>
-                    <input type="range" value="50" min="0" max="100" step="1" id="effects-volume-slider" class="slider" name="effects-volume">
-                </div>
-                <div id="effects-controls">
-                    <p>Sound Effects (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteSoundEffects()">ON</button></p>
-                </div>
-			</div>
-        </div> 
-        
-        <!--Modal for Game Information-->
-        <div id="battleGameInformation"><i class="fas fa-info"></i></div> <!--game information button-->
-		<div id="myModal2" class="modal">
-		
-			<!-- Modal Content - Battle -->
-			<div class="battle-information modal-content center-container absolute-center text-center mx-auto">
-				<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-                <h3 class="my-2">Battle Information</h3>
-                <p>Each ability has their own hit percentage and damage value.</p>
-                <hr>
-                <h4>Spiderman Moves</h4>
-                <p>Punch: <br>Hit chance = 70%, damage = 5 to 15</p>
-                <p>Web-Shooter: <br>Hit chance = 50%, damage = 10 to 20</p>
-                <p>Web-Swing: <br>Hit chance = 40%, damage = 15 to 25</p>
-                <hr>
-                <h4>Green Goblin Moves</h4>
-                <p>Glider Sweep: <br>Hit chance = 70%, damage = 5 to 15</p>
-                <p>Poison Gas: <br>Hit chance = 50%, damage = 10 to 20</p>
-                <p>Pumpkin Bomb: <br>Hit chance = 40%, damage = 15 to 25</p>
-			</div>
+    <div id="audioSettings"><i class="fas fa-music"></i></div> <!--Audio settings button-->
+	<div id="myModal" class="modal">		
+		<!-- Modal Content - Audio settings-->
+		<div class="audio-control modal-content center-container absolute-center text-center mx-auto">
+			<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+			<h3 class="my-2">Audio Settings</h3>
+            <hr>
+            <br>
+            <div class="volume-slider mx-auto">
+                <p class="mb-0">Adjust the music volume here:</p>
+                <input type="range" value="20" min="0" max="100" step="1" id="music-volume-slider" class="slider" name="music-volume">
+            </div>
+            <div id="music-controls">
+                <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p>
+            </div>
+            <hr>
+            <div class="volume-slider mx-auto">
+                <p class="mb-0">Adjust the sound effects volume here:</p>
+                <input type="range" value="50" min="0" max="100" step="1" id="effects-volume-slider" class="slider" name="effects-volume">
+            </div>
+            <div id="effects-controls">
+                <p>Sound Effects (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteSoundEffects()">ON</button></p>
+            </div>
 		</div>
+    </div> 
+        
+    <!--Modal for Game Information-->
+    <div id="battleGameInformation"><i class="fas fa-info"></i></div> <!--game information button-->
+	<div id="myModal2" class="modal">
+		<!-- Modal Content - Battle -->
+		<div class="battle-information modal-content center-container absolute-center text-center mx-auto">
+			<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+            <h3 class="my-2">Battle Information</h3>
+            <p>Each ability has their own hit percentage and damage value.</p>
+            <hr>
+            <h4 class="spiderman-moves">Spiderman Moves</h4>
+            <p>Punch: <br>Hit chance = 70%, damage = 5 to 15</p>
+            <p>Web-Shooter: <br>Hit chance = 50%, damage = 10 to 20</p>
+            <p>Web-Swing: <br>Hit chance = 40%, damage = 15 to 25</p>
+            <hr>
+            <h4 class="goblin-moves">Green Goblin Moves</h4>
+            <p>Glider Sweep: <br>Hit chance = 70%, damage = 5 to 15</p>
+            <p>Poison Gas: <br>Hit chance = 50%, damage = 10 to 20</p>
+            <p>Pumpkin Bomb: <br>Hit chance = 40%, damage = 15 to 25</p>
+		</div>
+	</div>
 
     <audio id="spidermanMusic">
         <source src="assets/audio/Spiderman-90s-Theme.mp3" type="audio/mpeg">
         Your browser does not suport the audio element.  <!--this text willshow if browser does not support the audio-->
     </audio>
+    
 	<section class="marvel-background">
         <header>
 			<span class="d-block mx-auto px-2 card-game-title text-center">BATTLE</span>
