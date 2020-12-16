@@ -666,5 +666,8 @@ hr {
     #marvel-logo {
         width: 200px;
     }
+    .card-container {
+    grid-template-columns: repeat(3, auto);
+  }
 }
 
