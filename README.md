@@ -41,22 +41,24 @@ As a visitor and a user of the website, when playing the card matching game I wo
 
 - Wireframes
     
-    The design for the wireframes were created using Balsamiq. Links for these are found below.
+    The design for the wireframes were created using Balsamiq. These can be viewed [here](./readme-images/Marvel-Wireframes.pdf)
     
-    - [Desktop]()
-    - [Mobile Phone]()
 
 
 # Game Functionality
 
 ## Battle Game - Spiderman vs Green Goblin
 
+* Due to the browsers now disabling autoplay of music, music will start when the user presses the "Begin Battle" button.
+* Upon page load, the text will describe to that the player will be using Spiderman to fight against Green Goblin.
 * The game begins by asking the player to use one of the three abilities available to Spiderman.
 * Each ability has a chance to hit or miss the enemy, Green Goblin.
 * Each ability has their own animation and sound effect, for both Spiderman and Green Goblin.
 * The text will advise the player of a successful attack or miss.
 * If an attack successfully hits Green Goblin, the player is updated of how much damage is dealt and their current Health.
 * Each time the player uses an ability, Green Goblin will retaliate with his own move.
+* Each time Green Goblin attacks the player (Spiderman), text will advise the player if Spiderman avoided the attack, or when hit, how much damage was taken.
+* Victory is achieved when Green Goblin's health is zero and loss when Spiderman's health reaches zero.
 * Upon victory or defeat, an overlay will advise the player of their victory or loss. Simply click to replay the game.
 
 ## Card Matching Game - Marvel Heroes
@@ -68,16 +70,20 @@ As a visitor and a user of the website, when playing the card matching game I wo
 * Simply click the overlay to replay the game.
     
 
+## Music and sound effects
+* Each page (Home page, Battle page and Card Matching page) has a modal for saudio settings. The user can turn off/on music and sound effects. They can also adjust the volume.
+
+
 # Technologies Used
 
-## Languages Used
+## Languages 
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Javascript](https://www.javascript.com/)
 -   [jQuery](https://jquery.com/)
 
-## Frameworks, Libraries & Programs Used
+## Frameworks, Libraries & Programs 
 
 1. [Bootstrap v4.5.2](https://getbootstrap.com/docs/4.5/getting-started/introduction/) - Bootstrap was used to assist with the layout and display of the content.
 1. [Font Awesome](https://fontawesome.com/) - Font Awesome used for the audio control and game information icons.
@@ -125,15 +131,13 @@ There were various sites where I obtained music and sound effects.
 
 1. Using [W3C Markup Validator](https://validator.w3.org/) and  to ensure there were no syntax errors in the HTML code.
 1. For CSS, I used [W3C CSS Validator Services](https://jigsaw.w3.org/css-validator/).
-1. Testing was performed using Google Chrome's device toggle feature. These include iPhones, Samsung Galaxy, iPad and iPad Pro.
-1. Further tests were performed to ensure both games function as intended. Documents to show this will follow.
+1. Testing was performed using Google Chrome's device toggle feature. These include screen sizes of small, medium and large resolutions.
+1. Further tests were performed to ensure both games function as intended. Documents to show this will can be seen here.
 
-
-## Known Bugs
-
-- On my mobile device, the bottom section of the Battle page has the marvel background image cut-off.
 
 ## Deployment
+
+### Github 
 
 This project was deployed to Gitub. This is done using the following steps:
 
