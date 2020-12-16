@@ -1,5 +1,7 @@
 # Marvel Games Website
 
+![](/readme-images/marvel-main-image.png)
+
 The website is based on the Marvel comics universe. As a fan of the Marvel universe, I wanted to base my site on this.
 There are two games that users can play. They are:
 
@@ -19,10 +21,11 @@ As a visitor and a user of the website, when playing the battle game I would lik
 * Understand each of my abilities available in terms of damage and hit chance.
 * Understand the abilities used by the opponent and how much it affects my character.
 * Adjust the music and sound settings at any time.
+* Understand the game that I play with clear instructions.
 
 As a visitor and a user of the website, when playing the card matching game I would like to:
 * Play a card matching game to challenge my memory.
-* Understand the games that I play with clear instructions.
+* Understand the game that I play with clear instructions.
 * Adjust the music and sound settings at any time.
 
 ## Design
@@ -41,7 +44,7 @@ As a visitor and a user of the website, when playing the card matching game I wo
 
 - Wireframes
     
-    The design for the wireframes were created using Balsamiq. These can be viewed [here](./readme-images/Marvel-Wireframes.pdf)
+    The design for the wireframes were created using Balsamiq. These can be viewed [here](/readme-images/Marvel-Wireframes.pdf)
     
 
 
@@ -136,21 +139,47 @@ There were various sites where I obtained music and sound effects.
 
 ## Testing User Stories
 
+### Battle Game
 As a visitor and a user of the website, when playing the battle game I would like to:
 * Play and experience a battle/fighting game using a Marvel Hero. 
     - The user will be playing as Spiderman.
 * Fight a difficult battle against a Marvel villain.
-    - The villain is Green Goblin. Each ability has a percentage that has a chance to hit the opponent. Spiderman and Green Goblin each have 3 abilities. Both sets of abilities are identical in hit chance and damage. A modal will show this information as below:
+    - The villain is Green Goblin. Each time the player selects one of Spiderman's moves, he will retaliate in an attempt to defeat Spiderman.
+    
+* See how effective the abilities I select in defeating the enemy.
+    - Each time an ability is used, there will be new text to show if Spiderman lands a hit or misses an attack. If the attack successfully lands, the game will tell the user how much damage was dealt to Green Goblin.
+
+    ![](readme-images/ability-text.PNG)
+
+* Understand each of my abilities available in terms of damage and hit chance.
+    - The information for abilities is shown in a modal as below:
 
     ![](readme-images/skill-information.PNG)
-* See how effective the abilities I select in defeating the enemy.
-* Understand each of my abilities available in terms of damage and hit chance.
+
 * Understand the abilities used by the opponent and how much it affects my character.
+    - Similar to how the game will inform the player of how much damage Spiderman has dealt, it will also show details of Green Goblin's attack on Spiderman.
+
+    ![](readme-images/ability-text2.PNG)
+
 * Adjust the music and sound settings at any time.
+    - Each page has an audio icon that when clicked, will show the modal to adjust the music and sound effect settings.
+
+    ![](readme-images/audio-modal.PNG)
+    
+* Adjust the music and sound settings at any time.
+    - When the user loads the page, the instructions are shown by text:
+
+    ![](readme-images/battle-start.PNG)
+
+### Card Matching Game
 
 As a visitor and a user of the website, when playing the card matching game I would like to:
 * Play a card matching game to challenge my memory.
-* Understand the games that I play with clear instructions.
+    - The cards start as facing down where the player is tasked to remember where heroes are positioned to find the matching pairs.
+
+    ![](readme-images/card-game.PNG)
+
+* Understand the game that I play with clear instructions.
 * Adjust the music and sound settings at any time.
 
 ## Deployment
