@@ -29,10 +29,10 @@ battleMusic.volume = 0.2;
 var webShootSound = new Audio('assets/audio/web-shoot.wav');
 var webSwingSound = new Audio('assets/audio/swing-kick.wav');
 var punchSound = new Audio('assets/audio/punch.wav');
-var pumpkinBombSound = new Audio('assets/audio/pumpkin-bomb.mp3')
+var pumpkinBombSound = new Audio('assets/audio/pumpkin-bomb.mp3');
 var gliderSound = new Audio('assets/audio/glider.mp3');
 gliderSound.volume = 0.4;
-var poisonSpraySound = new Audio('assets/audio/poison-spray.mp3')
+var poisonSpraySound = new Audio('assets/audio/poison-spray.mp3');
 
 // MODAL - Audio Settings //
 var modal = document.getElementById("myModal"); 
@@ -42,60 +42,56 @@ var battleInformation = document.getElementById("battleGameInformation");
 var span = document.getElementsByClassName("close");  
 
 audioSetting.onclick = function() {   
-  modal.style.display = "block";
-}
+    modal.style.display = "block";
+};
 
 battleInformation.onclick = function() {   
-  modal2.style.display = "block";
-}
+    modal2.style.display = "block";
+};
 
 span[0].onclick = function() {     
-  modal.style.display = "none";
-}
+    modal.style.display = "none";
+};
 
 span[1].onclick = function() {     
-  modal2.style.display = "none";
-}
-
-
-
-
+    modal2.style.display = "none";
+};
 
 //Volume control for background music --- taken from https://stackoverflow.com/questions/62160275/js-audio-volume-slider
 var musicVolumeSlider = document.querySelector('#music-volume-slider'); // get slider
-    musicVolumeSlider.addEventListener('input', () => {    // 
+musicVolumeSlider.addEventListener('input', () => {    // 
     battleMusic.volume = musicVolumeSlider.valueAsNumber / 100;
-    });
+});
 
 function muteMusic(){
     if (bgMusicState == "off"){
         bgMusicState = "on";
-        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>"                      
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteMusic()\">ON</button></p>";                      
         battleMusic.play();
     } else {
         bgMusicState = "off";
-        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>"                           
+        musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>";                           
         battleMusic.pause();
     }
 }
 
 //volume control for sound effects 
 var soundEffectsSlider = document.querySelector('#effects-volume-slider'); 
-    soundEffectsSlider.addEventListener('input', () => {   
+soundEffectsSlider.addEventListener('input', () => {  
     soundEffectsState = "on";
-    soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>" 
+    soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>"; 
     webShootSound.volume = soundEffectsSlider.valueAsNumber / 100;
     webSwingSound.volume = soundEffectsSlider.valueAsNumber / 100;
     punchSound.volume = soundEffectsSlider.valueAsNumber / 100;
     pumpkinBombSound.volume = soundEffectsSlider.valueAsNumber / 100;
     gliderSound.volume = (soundEffectsSlider.valueAsNumber / 100) * 0.4;
     poisonSpraySound.volume = soundEffectsSlider.valueAsNumber / 100;
-    });
+});
 
 function muteSoundEffects(){
     if (soundEffectsState == "off"){
         soundEffectsState = "on";
-        soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>"                      
+        soundEffectsControls.innerHTML = "<p>Sound Effects (click to turn on/off): <br><button class=\"volume-icon sound-on\" onclick=\"muteSoundEffects()\">ON</button></p>";                      
         webShootSound.volume = 1;
         webSwingSound.volume = 1;
         punchSound.volume = 1;
@@ -104,7 +100,7 @@ function muteSoundEffects(){
         poisonSpraySound.volume = 1;
     } else {
         soundEffectsState = "off";
-        soundEffectsControls.innerHTML = "Sound Effects (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteSoundEffects()\">OFF</button></p>"                           
+        soundEffectsControls.innerHTML = "Sound Effects (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteSoundEffects()\">OFF</button></p>";                           
         webShootSound.volume = 0;
         webSwingSound.volume = 0;
         punchSound.volume = 0;
@@ -137,14 +133,14 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
                 spiderHP = 0;
             }
             function gliderAttack() {
-                bottomRow.innerHTML += "<br>Green Goblin attacked you with his glider, dealing " + dmg + " damage. <br>Spiderman now has " + spiderHP + " HP."
+                bottomRow.innerHTML += "<br>Green Goblin attacked you with his glider, dealing " + dmg + " damage. <br>Spiderman now has " + spiderHP + " HP.";
                 var spiderHPBarWidth = (spiderHP / 100) * 144; 
                 spidermanHP.style.width = spiderHPBarWidth + "px";
             } 
             setTimeout(gliderAttack, 2000);
         } else {
             function gliderDodge() {
-                bottomRow.innerHTML += "<br>Spiderman dodged Green Goblin's glider sweep!!"
+                bottomRow.innerHTML += "<br>Spiderman dodged Green Goblin's glider sweep!!";
             }
             setTimeout(gliderDodge, 2000);
         }
@@ -159,14 +155,14 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
                 spiderHP = 0;
             }
             function poisonAttack() {
-                bottomRow.innerHTML += "<br>Green Goblin used poison gas, dealing " + dmg + " damage. <br>Spiderman now has " + spiderHP + " HP."
+                bottomRow.innerHTML += "<br>Green Goblin used poison gas, dealing " + dmg + " damage. <br>Spiderman now has " + spiderHP + " HP.";
                 var spiderHPBarWidth = (spiderHP / 100) * 144; 
                 spidermanHP.style.width = spiderHPBarWidth + "px"; 
             }
             setTimeout(poisonAttack, 2000);
         } else {
             function poisonDodge() {
-                bottomRow.innerHTML += "<br>Spiderman avoided Green Goblin's gas!!"
+                bottomRow.innerHTML += "<br>Spiderman avoided Green Goblin's gas!!";
             }
             setTimeout(poisonDodge, 2000);
         }
@@ -191,13 +187,13 @@ function goblinAttack() {   //goblin moves - 1=glider sweep, 2=poison spray, , 3
                 bottomRow.innerHTML += "<br>Spiderman's spider sense helped him avoid the Pumpkin Bomb!!";
             }
             setTimeout(pumpkinDodge, 2000);
-            }
-        }
-        if (spiderHP == 0){ // When Spiderman's health is 0, the below executes
-            disableMoves();
-            setTimeout(loseOverlay, 3000);
         }
     }
+    if (spiderHP == 0){ // When Spiderman's health is 0, the below executes
+        disableMoves();
+        setTimeout(loseOverlay, 3000);
+    }
+}
 
 //Spiderman's Moves
 function punch () {
@@ -272,7 +268,7 @@ function webSwing () {
             goblinHP = 0;
         }
         function webSwingAttack() {
-            bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. <br>Green Goblin now has " + goblinHP + " HP."
+            bottomRow.innerHTML = "You swing and kick Green Goblin with force, doing " + dmg + " damage. <br>Green Goblin now has " + goblinHP + " HP.";
             var goblinHPBarWidth = (goblinHP/100)*144; 
             greenGoblinHP.style.width =  goblinHPBarWidth + "px"; 
         }
@@ -306,28 +302,28 @@ function enableMoves() {
 
 function spidermanMissText() {
     bottomRow.innerHTML = "Spiderman's attack missed!";
-};
+}
 
 //Spiderman Animations
 function punchAnimation() {
     spidermanImage[0].classList.add('punchAnimation');
     setTimeout(function() {
         spidermanImage[0].classList.remove('punchAnimation');
-        }, 1000);
+    }, 1000);
 }
 
 function webShootAnimation() {
     spidermanImage[0].classList.add('webShootAnimation');
     setTimeout(function() {
         spidermanImage[0].classList.remove('webShootAnimation');
-        }, 1500);
+    }, 1500);
 }
 
 function webSwingAnimation() {
     spidermanImage[0].classList.add('webSwingAnimation');
     setTimeout(function() {
         spidermanImage[0].classList.remove('webSwingAnimation');
-        }, 1700);
+    }, 1700);
 }
 
 //Green Goblin Animations
@@ -335,21 +331,21 @@ function gliderSweepAnimation() {
     greenGoblinImage[0].classList.add('gliderSweepAnimation');
     setTimeout(function() {
         greenGoblinImage[0].classList.remove('gliderSweepAnimation');
-        }, 1700);
+    }, 1700);
 }
 
 function pumpkinBombAnimation() {
     greenGoblinImage[0].classList.add('pumpkinBombAnimation');
     setTimeout(function() {
         greenGoblinImage[0].classList.remove('pumpkinBombAnimation');
-        }, 1000);
+    }, 1000);
 }
 
 function poisonGasAnimation() {
     greenGoblinImage[0].classList.add('poisonGasAnimation');
     setTimeout(function() {
         greenGoblinImage[0].classList.remove('poisonGasAnimation');
-        }, 1500);
+    }, 1500);
 }
 
 //Overlay functions on victory or loss
