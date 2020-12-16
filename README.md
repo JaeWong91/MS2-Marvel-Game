@@ -141,6 +141,7 @@ As a visitor and a user of the website, when playing the battle game I would lik
     - The user will be playing as Spiderman.
 * Fight a difficult battle against a Marvel villain.
     - The villain is Green Goblin. Each ability has a percentage that has a chance to hit the opponent. Spiderman and Green Goblin each have 3 abilities. Both sets of abilities are identical in hit chance and damage. A modal will show this information as below:
+
     ![](readme-images/skill-information.PNG)
 * See how effective the abilities I select in defeating the enemy.
 * Understand each of my abilities available in terms of damage and hit chance.
