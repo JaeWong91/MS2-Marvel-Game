@@ -159,7 +159,8 @@ As a visitor and a user of the website, when playing the card matching game I wo
 This project was deployed to Gitub. This is done using the following steps:
 
 1.  Log in to GitHub and locate the Repository
-2.  Click the "Settings" button. This can be found here: ![](readme-images/github-settings-btn.png) 
+2.  Click the "Settings" button. This can be found here: 
+![](readme-images/github-settings-btn.png) 
 3.  Scroll down the page until you reach the "GitHub Pages" section.
 4.  Under "Source", the default dropdown option is "None". Change this to "Master Branch".
 5.  Ensure that "/ (Root)" is also selcted and then click "Save".
