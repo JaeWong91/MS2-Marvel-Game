@@ -667,7 +667,10 @@ hr {
         width: 200px;
     }
     .card-container {
-    grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, auto);
   }
+    .modal-content {
+        width: 300px;
+    }
 }
 
