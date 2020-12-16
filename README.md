@@ -71,7 +71,7 @@ As a visitor and a user of the website, when playing the card matching game I wo
     
 
 ## Music and sound effects
-* Each page (Home page, Battle page and Card Matching page) has a modal for saudio settings. The user can turn off/on music and sound effects. They can also adjust the volume.
+* Each page (Home page, Battle page and Card Matching page) has a modal for audio settings. The user can turn off/on music and sound effects. They can also adjust the volume.
 
 
 # Technologies Used
@@ -134,6 +134,23 @@ There were various sites where I obtained music and sound effects.
 1. Testing was performed using Google Chrome's device toggle feature. These include screen sizes of small, medium and large resolutions.
 1. Further tests were performed to ensure both games function as intended. Documents to show this will can be seen here.
 
+## Testing User Stories
+
+As a visitor and a user of the website, when playing the battle game I would like to:
+* Play and experience a battle/fighting game using a Marvel Hero. 
+    - The user will be playing as Spiderman.
+* Fight a difficult battle against a Marvel villain.
+    - The villain is Green Goblin. Each ability has a percentage that has a chance to hit the opponent. Spiderman and Green Goblin each have 3 abilities. Both sets of abilities are identical in hit chance and damage. A modal will show this information as below:
+    
+* See how effective the abilities I select in defeating the enemy.
+* Understand each of my abilities available in terms of damage and hit chance.
+* Understand the abilities used by the opponent and how much it affects my character.
+* Adjust the music and sound settings at any time.
+
+As a visitor and a user of the website, when playing the card matching game I would like to:
+* Play a card matching game to challenge my memory.
+* Understand the games that I play with clear instructions.
+* Adjust the music and sound settings at any time.
 
 ## Deployment
 
