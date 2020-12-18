@@ -56,6 +56,7 @@ As a visitor and a user of the website, when playing the card matching game I wo
 * Upon page load, the text will describe to that the player will be using Spiderman to fight against Green Goblin.
 * The game begins by asking the player to use one of the three abilities available to Spiderman.
 * Each ability has a chance to hit or miss the enemy, Green Goblin.
+* Spiderman and Green Goblin have three abilities each where they have different hit chances and damage values. A high-risk high-reward principle is implemented where an ability that deals more damage, will have a lower chance to land.
 * Each ability has their own animation and sound effect, for both Spiderman and Green Goblin.
 * The text will advise the player of a successful attack or miss.
 * If an attack successfully hits Green Goblin, the player is updated of how much damage is dealt and their current Health.
