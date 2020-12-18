@@ -20,8 +20,8 @@ As a visitor and a user of the website, when playing the battle game I would lik
 * See how effective the abilities I select in defeating the enemy.
 * Understand each of my abilities available in terms of damage and hit chance.
 * Understand the abilities used by the opponent and how much it affects my character.
-* Adjust the music and sound settings at any time.
 * Understand the game that I play with clear instructions.
+* Adjust the music and sound settings at any time.
 
 As a visitor and a user of the website, when playing the card matching game I would like to:
 * Play a card matching game to challenge my memory.
@@ -77,6 +77,10 @@ As a visitor and a user of the website, when playing the card matching game I wo
 ## Music and sound effects
 * Each page (Home page, Battle page and Card Matching page) has a modal for audio settings. The user can turn off/on music and sound effects. They can also adjust the volume.
 
+## Features left to implement
+* Additional difficulty settings for both Battle and Card Games
+* High score table for the Card Game.
+* Character selections for the Battle Game.
 
 # Technologies Used
 
@@ -104,7 +108,7 @@ As a visitor and a user of the website, when playing the card matching game I wo
 1. [Stackoverflow - Main Background image](https://stackoverflow.com/questions/23254346/how-can-i-change-background-image-opacity-without-changing-on-div-content) - Code used to apply the background image and asjust opacity independantly.
 1. [Stackoverflow - Centering the modal](https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers) - Used this code to center the modal.
 1. [Stackoverflow - Audio controls](https://stackoverflow.com/questions/62160275/js-audio-volume-slider) - This code was used to implement audio controls such as the mute function and the volume sliders.
-
+1. [w3schools - Modals](https://www.w3schools.com/howto/howto_css_modals.asp) - The code here was used to implement modals for each page.
 
 ## Image stock sites
 
@@ -133,11 +137,10 @@ There were various sites where I obtained music and sound effects.
 
 # Testing
 
-1. Using [W3C Markup Validator](https://validator.w3.org/) and  to ensure there were no syntax errors in the HTML code.
+1. Using [W3C Markup Validator](https://validator.w3.org/) to ensure there were no syntax errors in the HTML code.
 1. For CSS, I used [W3C CSS Validator Services](https://jigsaw.w3.org/css-validator/).
 1. For Javascript, I used [jshint](https://jshint.com/) to ensure no errors in my code.
 1. Testing was performed using Google Chrome's device toggle feature. These include screen sizes of small, medium and large resolutions.
-1. Further tests were performed to ensure both games function as intended. Documents to show this will can be seen here.
 
 ## Testing User Stories
 
@@ -162,16 +165,16 @@ As a visitor and a user of the website, when playing the battle game I would lik
     - Similar to how the game will inform the player of how much damage Spiderman has dealt, it will also show details of Green Goblin's attack on Spiderman.
 
     ![](readme-images/ability-text2.PNG)
+    
+* Understand the game that I play with clear instructions.
+    - When the user loads the page, the instructions are shown by text:
+
+    ![](readme-images/battle-start.PNG)
 
 * Adjust the music and sound settings at any time.
     - Each page has an audio icon that when clicked, will show the modal to adjust the music and sound effect settings.
 
     ![](readme-images/audio-modal.PNG)
-    
-* Adjust the music and sound settings at any time.
-    - When the user loads the page, the instructions are shown by text:
-
-    ![](readme-images/battle-start.PNG)
 
 ### Card Matching Game
 
@@ -182,7 +185,35 @@ As a visitor and a user of the website, when playing the card matching game I wo
     ![](readme-images/card-game.PNG)
 
 * Understand the game that I play with clear instructions.
+    - When entering the Card Matching page for the first time, it will tell the player how to play the game:
+
+    ![](readme-images/card-instruction.PNG)
+
 * Adjust the music and sound settings at any time.
+    - The Audio Settings modal will allow the user to adjust the background music and sound effect volume levels on all pages. The user is also able to turn these on or off entirely.
+
+    ![](readme-images/audio-modal.PNG)
+
+
+### Responsiveness / Device testing
+
+Manual testing was performed on Google Chrome using the device toggle Tool.
+The devices are:
+* Galaxy S5
+* Pixel 2
+* Pixel 2 XL
+* iPhone 5/SE
+* iPhone 6/7/8
+* iPhone 6/7/8 Plus
+* iPhone X
+* iPad 
+* iPad Pro 
+* Desktop with various sizes: 1930px X 1080px, 1000px X 800px
+
+### Further Manual Testing
+
+Further tests were done manually to ensure the website has an appropriate layout on various sized devices. The range of the screens were 350x650 to 2160x1440. This would cover almost all devices.
+Tests were also done for the features of both games. The Testing documentation can be found here - [Testing Document](readme-images/MS2-testing.pdf).
 
 ## Deployment
 
@@ -206,4 +237,4 @@ The below videos were used as guidelines to create the functional games.
 -   Card Matching Game part 1 - [Youtube - 'Web Dev Simplified'](https://www.youtube.com/watch?v=28VfzEiJgy4&ab_channel=WebDevSimplified)
 -   Card Matching Game part 2 - [Youtube - 'PortEXE'](https://www.youtube.com/watch?v=3uuQ3g92oPQ&ab_channel=PortEXE)
 
-I would also like to thank my mentors, Mark Railton and Spencer Barriball for their guidance. Scott at student support has also been a huge help and I would like to thank him for being patient with me.
+I would like to thank my mentors, Mark Railton for his guidance and Spencer Barriball for taking the time to play and test the games thoroughly. His positive comments were very encouraging! Scott at student support has also been a huge help and I would like to thank him for being patient with me.
