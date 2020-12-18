@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!-- JQuery CDN-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!-- JQuery CDN-->
     <link rel="stylesheet" href="assets/css/style.css">
-	<title>Marvel Battle</title>
+    <title>Marvel Battle</title>
 </head>
 
 <body>
     <!-- The Modal for Audio Settings-->
     <div id="audioSettings"><i class="fas fa-music"></i></div> <!--Audio settings button-->
-	<div id="myModal" class="modal">		
-		<!-- Modal Content - Audio settings-->
-		<div class="audio-control modal-content center-container absolute-center text-center mx-auto">
-			<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-			<h3 class="my-2">Audio Settings</h3>
+    <div id="myModal" class="modal">		
+        <!-- Modal Content - Audio settings-->
+        <div class="audio-control modal-content center-container absolute-center text-center mx-auto">
+            <span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+            <h3 class="my-2">Audio Settings</h3>
             <hr>
             <br>
             <div class="volume-slider mx-auto">
@@ -36,15 +36,15 @@
             <div id="effects-controls">
                 <p>Sound Effects (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteSoundEffects()">ON</button></p>
             </div>
-		</div>
+        </div>
     </div> 
         
     <!--Modal for Game Information-->
     <div id="battleGameInformation"><i class="fas fa-info"></i></div> <!--game information button-->
-	<div id="myModal2" class="modal">
-		<!-- Modal Content - Battle -->
-		<div class="battle-information modal-content center-container absolute-center text-center mx-auto">
-			<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+    <div id="myModal2" class="modal">
+        <!-- Modal Content - Battle -->
+        <div class="battle-information modal-content center-container absolute-center text-center mx-auto">
+            <span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
             <h3 class="my-2">Battle Information</h3>
             <p>Each ability has their own hit percentage and damage value.</p>
             <hr>
@@ -57,20 +57,20 @@
             <p>Glider Sweep: <br>Hit chance = 70%, damage = 5 to 15</p>
             <p>Poison Gas: <br>Hit chance = 50%, damage = 10 to 20</p>
             <p>Pumpkin Bomb: <br>Hit chance = 40%, damage = 15 to 25</p>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <audio id="spidermanMusic">
         <source src="assets/audio/Spiderman-90s-Theme.mp3" type="audio/mpeg">
         Your browser does not suport the audio element.  <!--this text willshow if browser does not support the audio-->
     </audio>
     
-	<div class="marvel-background">
+    <div class="marvel-background">
         <header>
-			<span class="d-block mx-auto px-2 card-game-title text-center">BATTLE</span>
+            <span class="d-block mx-auto px-2 card-game-title text-center">BATTLE</span>
         </header>
         <!-- Exit button -->
-		<a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>  
+        <a href="index.html"><span class="exit-button px-1 py-1 text-center"><i class="far fa-arrow-alt-circle-left"></i><br>E<br>X<br>I<br>T</span></a>  
     </div>
     
     <!--Battle game container-->
