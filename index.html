@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!-- JQuery CDN-->
     <link rel="stylesheet" href="assets/css/style.css">
-	<title>Marvel</title>
+    <title>Marvel</title>
 </head>
 
 <body>
     <!-- The Modal -->
     <div id="audioSettings"><i class="fas fa-music "></i></div> <!--AUDIO SETTINGS BUTTON-->
-	<div id="myModal" class="modal">
+    <div id="myModal" class="modal">
 		
-		<!-- Modal Content -->
-		<div class="audio-control main-menu-modal modal-content center-container absolute-center text-center mx-auto">
-			<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-			<h3 class="my-2">Audio Settings</h3>
+        <!-- Modal Content -->
+        <div class="audio-control main-menu-modal modal-content center-container absolute-center text-center mx-auto">
+            <span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+            <h3 class="my-2">Audio Settings</h3>
             <hr>
             <br>
             <div class="volume-slider mx-auto">
@@ -29,21 +29,21 @@
             <div id="music-controls">
                 <p>Background Music (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteMusic()">ON</button></p>
             </div>
-		</div>
+        </div>
     </div> 
     
-	<section class="marvel-background">
-		<header>
-			<img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
+    <section class="marvel-background">
+        <header>
+            <img src="assets/images/marvel-logo.jpg" alt="marvel logo" class="d-block mx-auto" id="marvel-logo">
         </header>
-		<div class="text-center mx-auto align-middle py-5 center-container absolute-center" id="main-menu">
-			<h3>Select a Game</h3>
+        <div class="text-center mx-auto align-middle py-5 center-container absolute-center" id="main-menu">
+            <h3>Select a Game</h3>
             <br>
             <a href="battle.html" class="btn btn-dark">Battle</a>
             <br>
-		    <a href="card-game.html" id="myBtn" class="btn btn-dark mt-2">Card Matching</a>
-		</div>
-	</section>
+            <a href="card-game.html" id="myBtn" class="btn btn-dark mt-2">Card Matching</a>
+        </div>
+    </section>
 
     <script src="assets/js/script.js"></script>
 
