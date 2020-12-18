@@ -12,16 +12,16 @@
 </head>
 
 <body>
-	<section class="marvel-background">
+    <section class="marvel-background">
 		
         <!-- THE MODAL-->
         <div id="audioSettings"><i class="fas fa-music"></i></div> <!--AUDIO SETTINGS BUTTON-->
-		<div id="myModal" class="modal">
+        <div id="myModal" class="modal">
 		
-			<!-- THE MODAL CONTENT -->
-			<div class="audio-control modal-content center-container absolute-center text-center mx-auto">
-				<span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
-				<h3 class="my-2">Audio Settings</h3>
+            <!-- THE MODAL CONTENT -->
+            <div class="audio-control modal-content center-container absolute-center text-center mx-auto">
+                <span class="col-4 close mt-3 mb-2 ml-1 text-left"><i class="far fa-arrow-alt-circle-left"></i></span>
+                <h3 class="my-2">Audio Settings</h3>
                 <hr>
                 <br>
                 <div class="volume-slider mx-auto">
@@ -39,18 +39,18 @@
                 <div id="effects-controls">
                     <p>Sound Effects (click to turn on/off): <br><button class="volume-icon sound-on" onclick="muteSoundEffects()">ON</button></p>
                 </div>
-			</div>
-		</div> 
+            </div>
+        </div> 
 
         <header>
-			<span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
+            <span class="d-block mx-auto px-2 card-game-title text-center">CARD MATCHING</span>
         </header>
 
         <div class="center-container absolute-center text-center mx-auto my-auto p-3" id="card-menu">
                 <h5>How to play:</h5><br><p>Find and pair-up the heroes hidden behind the cards. There are a total of 12 different heroes.</p>
                 <p>You have 90 seconds to find them all!</p>
-				<button type="button" class="card-play-button btn btn-success w-50 center mx-auto mt-4">Play</button>
-		</div>    
+                <button type="button" class="card-play-button btn btn-success w-50 center mx-auto mt-4">Play</button>
+        </div>    
 
         <!--Overlays on gameover or victory-->
         <div id="game-over-text" class="overlay-text">
@@ -67,182 +67,183 @@
         
         <!--Whole Card Game-->
         <div class="card-game-container container hide mt-5 py-3 hide" id="card-game">   <!-- added 'hide' class to try and hide the card game before a difficulty is selected-->
-			<div class="card-game-info-container row">
-				<div class="text-center col-sm-12 col-md-6 pl-md-5 card-game-info">
-					Time <span id="time-remaining">90</span>
-				</div>
-				<div class="text-center col-sm-12 col-md-6 pr-md-5 attempts card-game-info">
-					Attempts <span id="attempts">0</span>
-				</div>
-			</div>
+            <div class="card-game-info-container row">
+                <div class="text-center col-sm-12 col-md-6 pl-md-5 card-game-info">
+                    Time <span id="time-remaining">90</span>
+                </div>
+                <div class="text-center col-sm-12 col-md-6 pr-md-5 attempts card-game-info">
+                    Attempts <span id="attempts">0</span>
+                </div>
+            </div>
 
             <!--Cards -->
             <div class="card-container justify-content-center">
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face" >
-                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
-                        </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-					<div class="card easy medium hard mx-2">
-						<div class="card-back card-face" >
-							<img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-					    </div>
-						<div class="card-front card-face">
-                            <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
-					    </div>
-					</div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face "> 
-                            <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
-                        </div>
+                    <div class="card-front card-face" >
+                        <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
                     </div>
-                    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face" >
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/thor.png" alt="thor">
-                        </div>
+                    <div class="card-front card-face">
+                        <img class="card-value" src="assets/images/spiderman.png" alt="spiderman">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/thor.png" alt="thor">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/ironman.png" alt="iron man">
-                        </div>
+                    <div class="card-front card-face "> 
+                        <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                     </div>
-                    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/ironman.png" alt="iron man">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
-                        </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/cap-america.png" alt="captain america">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/hulk.png" alt="hulk">
-                        </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/thor.png" alt="thor">
                     </div>
-                    <div class="card easy medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/hulk.png" alt="hulk">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face">
-                            <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
-                        </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/thor.png" alt="thor">
                     </div>
-				    <div class="card medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-				    <div class="card medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
-                        </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                     </div>
-                    <div class="card medium hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-                    <div class="card hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/rogue.png" alt="rogue">
-                        </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/ironman.png" alt="iron man">
                     </div>
-                    <div class="card hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/rogue.png" alt="rogue">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-                    <div class="card hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/jean.png" alt="jean grey">
-                        </div>
+                    <div class="card-front card-face">
+                        <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
                     </div>
-                    <div class="card hard mx-2">
-                        <div class="card-back card-face">
-                            <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
-                        </div>
-                        <div class="card-front card-face"> 
-                            <img class="card-value" src="assets/images/jean.png" alt="jean grey">
-                        </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
                     </div>
-			    
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/black-panther.png" alt="black panther">
+                    </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/hulk.png" alt="hulk">
+                    </div>
+                </div>
+                <div class="card easy medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/hulk.png" alt="hulk">
+                    </div>
+                </div>
+                <div class="card medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face">
+                        <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
+                    </div>
+                </div>
+                <div class="card medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/wolverine.png" alt="wolverine">
+                    </div>
+                </div>
+                <div class="card medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
+                    </div>
+                </div>
+                <div class="card medium hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/black-widow.png" alt="black widow">
+                    </div>
+                </div>
+                <div class="card hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/rogue.png" alt="rogue">
+                    </div>
+                </div>
+                <div class="card hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/rogue.png" alt="rogue">
+                    </div>
+                </div>
+                <div class="card hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/jean.png" alt="jean grey">
+                    </div>
+                </div>
+                <div class="card hard mx-2">
+                    <div class="card-back card-face">
+                        <img class="question-mark" src="assets/images/question-mark.png" alt="deadpool question mark">
+                    </div>
+                    <div class="card-front card-face"> 
+                        <img class="card-value" src="assets/images/jean.png" alt="jean grey">
+                    </div>
+                </div>
             </div>
         </div>
-	</section>
+    </section>
+    
     <script src="assets/js/cardGameScript.js" type="text/javascript"></script> 
+    
 </body>
 
 </html>
