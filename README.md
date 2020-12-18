@@ -139,7 +139,7 @@ There were various sites where I obtained music and sound effects.
 
 1. Using [W3C Markup Validator](https://validator.w3.org/) to ensure there were no syntax errors in the HTML code.
 1. For CSS, I used [W3C CSS Validator Services](https://jigsaw.w3.org/css-validator/).
-1. For Javascript, I used [jshint](https://jshint.com/) to ensure no errors in my code.
+1. For Javascript, I used [JSHint](https://jshint.com/) to ensure no errors in my code.
 1. Testing was performed using Google Chrome's device toggle feature. These include screen sizes of small, medium and large resolutions.
 
 ## Testing User Stories

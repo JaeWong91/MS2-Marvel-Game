@@ -39,5 +39,5 @@ function muteMusic(){
         musicControls.innerHTML = "<p>Background Music (click to turn on/off): <br><button class=\"volume-icon\" onclick=\"muteMusic()\">OFF</button></p>";                          
         marvelTheme.pause();
     }
-};
+}
 
