@@ -1,44 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 body {
-  font-family: "Anton", sans-serif;
+    font-family: "Anton", sans-serif;
 }
 
 header {
-  background-color: rgb(0, 0, 0, 0.9);
+    background-color: rgb(0, 0, 0, 0.9);
   
 }
 
 #marvel-logo {
-  width: 300px;
-  border: solid 1px;
-  border-color: #ffffff;
-  animation-name: animateappear;
-  animation-duration: 2s;
+    width: 300px;
+    border: solid 1px;
+    border-color: #ffffff;
+    animation-name: animateappear;
+    animation-duration: 2s;
 }
 
 .marvel-background:after {      /* This code credited to - https://stackoverflow.com/questions/23254346/how-can-i-change-background-image-opacity-without-changing-on-div-content*/
-  content: "";
-  background: url("../images/marvel-background.jpg") no-repeat center center;
-  position: absolute;
-  background-size: cover;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.4;
+    content: "";
+    background: url("../images/marvel-background.jpg") no-repeat center center;
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
 }
 
 .card-game-title {
-  background-color: #236bc4;
-  color: #ffffff;
-  font-size: 40px;
-  font-stretch: ultra-expanded;
-  border: solid 1px #ffffff;
-  animation-name: animateappear;
-  animation-duration: 2s;
-  width: 300px;
+    background-color: #236bc4;
+    color: #ffffff;
+    font-size: 40px;
+    font-stretch: ultra-expanded;
+    border: solid 1px #ffffff;
+    animation-name: animateappear;
+    animation-duration: 2s;
+    width: 300px;
 }
 
 /* Main menu - "Select a Game" */
@@ -68,26 +68,26 @@ header {
 }
 
 .btn {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 hr {
-  border: 1px solid white;
-  width: 350px;
+    border: 1px solid white;
+    width: 350px;
 }
 
 .modal-content {
-  position: absolute;
-  width: 400px;
-  height: 550px;
-  font-size: 20px;
-  background-color: rgb(7, 19, 34);
-  color: white;
-  border: solid 1px;
-  border-color: white;
-  z-index: 10;
-  animation-name: animatetop;
-  animation-duration: 1s;
+    position: absolute;
+    width: 400px;
+    height: 550px;
+    font-size: 20px;
+    background-color: rgb(7, 19, 34);
+    color: white;
+    border: solid 1px;
+    border-color: white;
+    z-index: 10;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .main-menu-modal {
@@ -101,57 +101,57 @@ hr {
 
 /* The close button on the modal */
 .close {
-  color: white;
-  float: left;
-  opacity: 1;
-  border: none;
-  font-weight: 500;
-  text-shadow: none;
-  flex: none;
-  font-size: 30px;
+    color: white;
+    float: left;
+    opacity: 1;
+    border: none;
+    font-weight: 500;
+    text-shadow: none;
+    flex: none;
+    font-size: 30px;
 }
 
 .close:hover,
 .close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @keyframes animatetop {     /* taken from w3schools - to make an element appear from the top and fade in-like effect*/ 
-  from {
-    top: -400px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+    from {
+        top: -400px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 @keyframes animateappear {     /* taken from w3schools */
-  from {
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 .center-container {     /* centering the modal and main menu - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
-  position: relative;
-  perspective: 500px;  /* 3d perspective, will tell us that the element is 500px away from the game container */
+    position: relative;
+    perspective: 500px;  /* 3d perspective, will tell us that the element is 500px away from the game container */
 }
 
 .absolute-center {    /* centering the modal - https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers*/
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
   
 .exit-button {
@@ -565,14 +565,14 @@ hr {
 /* Media Queries for page size responsiveness*/
 
 @media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: repeat(4, auto)
-  }
+    .card-container {
+        grid-template-columns: repeat(4, auto)
+    }
 
-  .card-game-info-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .card-game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 850px) {
@@ -591,9 +591,11 @@ hr {
     #marvel-logo {
         width: 200px;
     }
+
     .card-container {
         grid-template-columns: repeat(3, auto);
-  }
+    }
+
     .modal-content {
         width: 300px;
     }
